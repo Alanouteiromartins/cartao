@@ -1,0 +1,16 @@
+a, span {
+    color: #fff;
+}
+
+.container > a {
+    font-size: 1.5rem;
+}
+
+.navbar-nav > a {
+    gap: 5px;
+    font-size: 1.15rem;
+}
+
+.nav-link:hover{
+    color: rgb(185, 185, 185);
+}

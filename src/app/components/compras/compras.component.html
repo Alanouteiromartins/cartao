@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Lista de Compras</h2>
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra" onclick="openModal()">Adicionar Compra</button>
+    </div>
+    
+    <table class="table table-bordered table-hover text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Descrição</th>
+                <th>Valor (R$)</th>
+                <th>Data</th>
+                <th>Parcelas</th>
+                <th>Devedor</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaCompras">
+            <tr *ngFor="let compra of compras">
+                <td>{{compra.descricao}}</td>
+                <td>{{compra.valor | currency:'BRL'}}</td>
+                <td>{{compra.data | date:'dd/MM/yyyy'}}</td>
+                <td>{{compra.parcelas}}</td>
+                <td>{{compra.devedor?.nome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Cadastrar Compra</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCompra">
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <input [(ngModel)]="descricao" name="descricao" type="text" class="form-control" id="descricao" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor" class="form-label">Valor (R$)</label>
+                        <input [(ngModel)]="valor" name="valor" type="number" class="form-control" id="valor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="data" class="form-label">Data</label>
+                        <input [(ngModel)]="data" name="data" type="date" class="form-control" id="data" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="parcelas" class="form-label">Quantidade de Parcelas</label>
+                        <input [(ngModel)]="parcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="devedor" class="form-label">Devedor</label>
+                        <select [(ngModel)]="devedor" name="devedor" class="form-select" id="devedor" required>
+                            <option value="" disabled selected>Selecione o devedor</option>
+                            <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">
+                                {{pessoa.nome}}</option>
+                        </select>
+                    </div>
+                    <button (click)="salvar()" type="submit" class="btn btn-primary w-100">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
