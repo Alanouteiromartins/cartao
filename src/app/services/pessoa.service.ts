@@ -11,7 +11,8 @@ export class PessoaService {
       {nome: 'Tiffani', telefone: '(51)99370-3500', email: 'tiffani.avila@outlook.com'},
       {nome: 'Valdemar', telefone: '(51)99366-2284', email: 'valdo.65@hotmail.com'},
       {nome: 'Alcione', telefone: '(51)0000-0000', email: 'avila_sl@outlook.com'},
-      {nome: 'Davi', telefone: '(51)0000-0000', email: 'avila_sl@outlook.com'}
+      {nome: 'Davi', telefone: '(51)0000-0000', email: 'avila_sl@outlook.com'},
+      {nome: 'Rosangela', telefone: '(51)0000-0000', email: 'rosangela_sl@outlook.com'}
     ];
 
     getPessoas(){
