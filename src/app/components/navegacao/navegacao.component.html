@@ -1,5 +1,5 @@
-<nav class="navbar bg-dark navbar-expand-sm">
-    <div class="container py-2">
+<nav class="navbar bg-dark navbar-expand-sm py-2">
+    <div class="container">
         <a href="#" class="navbar-brand d-flex align-items-center">
             <i class="lni lni-credit-card-multiple fs-2 me-2"></i>
             Sistema Cartão</a>
@@ -8,15 +8,15 @@
             </button>
             <div class="collapse navbar-collapse" id="menuNavBar">
                 <div class="navbar-nav ms-auto">
-                    <a href="pessoas" routerLink="pessoas" class="nav-link d-flex align-items-center">
+                    <a  routerLink="pessoas" routerLinkActive="active" class="nav-link d-flex align-items-center">
                         <i class="lni lni-user-multiple-4"></i>
                         Pessoas</a>
-                    <a href="compras" routerLink="compras" class="nav-link d-flex align-items-center">
+                    <a routerLink="compras" routerLinkActive="active" class="nav-link d-flex align-items-center">
                         <i class="lni lni-cart-2"></i>
                         Compras</a>
-                        <a class="nav-link d-flex align-items-center">
-                            <i class="bi bi-clipboard-data"></i>
-                            Relatório</a>
+                    <a routerLink="relatorios" routerLinkActive="active" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-clipboard-data"></i>
+                        Relatório</a>
                 </div>
             </div>
     </div>   

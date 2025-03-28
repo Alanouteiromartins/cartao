@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navegacao',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,CommonModule, RouterLinkActive],
   templateUrl: './navegacao.component.html',
   styleUrl: './navegacao.component.css'
 })
