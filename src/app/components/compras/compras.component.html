@@ -57,11 +57,11 @@
                             <label for="devedor" class="form-label">Devedor</label>
                             <select [(ngModel)]="devedor" name="devedor" class="form-select" id="devedor" required>
                                 <option value="" disabled selected>Selecione o devedor</option>
-                                <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">
-                                    {{pessoa.nome}}</option>
+                                <option>
+                                    Alan</option>
                             </select>
                         </div>
-                        <button (click)="salvar()" type="submit" class="btn btn-primary w-100">Salvar</button>
+                        <button  type="submit" class="btn btn-primary w-100">Salvar</button>
                     </form>
                 </div>
             </div>

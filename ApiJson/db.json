@@ -1,0 +1,54 @@
+{
+  "pessoas": [
+    {
+      "nome": "Alan",
+      "telefone": "(51)99346-1726)",
+      "email": "alanoutmartins@gmail.com",
+      "id": "469b"
+    },
+    {
+      "nome": "Tiffani",
+      "telefone": "(51)99370-3500)",
+      "email": "tiffani.avila@outlook.com",
+      "id": "dedc"
+    },
+    {
+      "nome": "Valdemar",
+      "telefone": "(51)99366-2284)",
+      "email": "valdo.65@hotmail.com",
+      "id": "e68f"
+    },
+    {
+      "id": "9fbc",
+      "nome": "Alcione",
+      "telefone": "(51)99410-5356",
+      "email": "avila_sl@outlook.com"
+    }
+  ],
+  "compras": [
+    {
+      "descricao": "tenis",
+      "valor": 760,
+      "data": "2025-03-24",
+      "parcelas": 6,
+      "devedor": "Alan",
+      "id": "5fb0"
+    },
+    {
+      "descricao": "anel",
+      "valor": 89,
+      "data": "2025-02-19",
+      "parcelas": 2,
+      "devedor": "Tiffani",
+      "id": "04ec"
+    },
+    {
+      "descricao": "óleo",
+      "valor": 250,
+      "data": "2025-01-20",
+      "parcelas": 6,
+      "devedor": "Valdemar",
+      "id": "a9fb"
+    }
+  ]
+}

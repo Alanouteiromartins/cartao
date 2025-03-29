@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { NavegacaoComponent } from "./components/navegacao/navegacao.component";
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavegacaoComponent, NgIf],
+  imports: [RouterOutlet, NavegacaoComponent, NgIf, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

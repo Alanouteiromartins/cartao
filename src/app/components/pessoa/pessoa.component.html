@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let pessoa of pessoas">
+                <tr *ngFor="let pessoa of pessoas" (click)="abrirModal(pessoa)" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalCadastro">
                     <td>{{pessoa.nome}}</td>
                     <td>{{pessoa.telefone}}</td>
                     <td>{{pessoa.email}}</td>
@@ -35,17 +35,17 @@
                     <form>
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                            <input name="nome" [(ngModel)]="nome" type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
                         </div>
                         <div class="mb-3">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" required>
+                            <input name="telefone" [(ngModel)]="telefone" type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                            <input name="email" [(ngModel)]="email" type="email" class="form-control" id="email" placeholder="Digite seu e-mail" >
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                        <button type="submit" (ngSubmit)="addPessoa()" class="btn btn-primary w-100">Cadastrar</button>
                     </form>
                 </div>
             </div>

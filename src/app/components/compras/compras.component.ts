@@ -16,31 +16,11 @@ import { CompraService } from '../../services/compra.service';
 })
 export class ComprasComponent {
 
-  pessoaService: PessoaService = new PessoaService;
-  compraService: CompraService = new CompraService;
-  
+  compras: Compra [] = [];
 
   descricao: string = '';
   valor!: number;
   data!: Date;
   parcelas!: number;
   devedor!: Pessoa;
-
-  pessoas: Pessoa[] = this.pessoaService.getPessoas();
-  compras: Compra[] = this.compraService.getCompras();
-
-  salvar(){
-    const novacompra = {
-      descricao: this.descricao,
-      valor: this.valor,
-      data: this.data,
-      parcelas: this.parcelas,
-      devedor: this.devedor
-    }
-
-    this.compraService.addCompra(novacompra);
-  }
-
-
-
 }

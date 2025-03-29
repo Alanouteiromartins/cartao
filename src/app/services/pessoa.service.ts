@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Pessoa } from '../interfaces/pessoa.interface.';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PessoaService {
 
-  pessoas: Pessoa[] = [
-      {nome: 'Alan', telefone: '(51)99346-1726', email: 'alanoutmartins@gmail.com'},
-      {nome: 'Tiffani', telefone: '(51)99370-3500', email: 'tiffani.avila@outlook.com'},
-      {nome: 'Valdemar', telefone: '(51)99366-2284', email: 'valdo.65@hotmail.com'},
-      {nome: 'Alcione', telefone: '(51)0000-0000', email: 'avila_sl@outlook.com'},
-      {nome: 'Davi', telefone: '(51)0000-0000', email: 'avila_sl@outlook.com'},
-      {nome: 'Rosangela', telefone: '(51)0000-0000', email: 'rosangela_sl@outlook.com'}
-    ];
+  constructor(private http: HttpClient){}
 
-    getPessoas(){
-      return this.pessoas;
-    }
+  getPessoas(){
+    return this.http.get<Pessoa[]>(`${environment.apiUrl}/pessoas`);
+  }
 
+  addPessoa(pessoa: Pessoa){
+    return this.http.post<Pessoa>(`${environment.apiUrl}/pessoas`, pessoa);
+  }
+
+  editPessoa(pessoa: Pessoa){
+    return this.http.put<Pessoa>(`${environment.apiUrl}/pessoas/${pessoa.id}`, pessoa);
+  }
   
 }
