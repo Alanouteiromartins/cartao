@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './pessoa.component.css'
 })
 export class PessoaComponent implements OnInit{
-  pessoas: Pessoa[] = [];
+  pessoas: Pessoa[] = []; 
+  pessoaParaEditar!: Pessoa; 
   nome: string = '';
   telefone: string = '';
   email: string = '';
@@ -49,12 +50,28 @@ export class PessoaComponent implements OnInit{
 
   editPessoa(){
 
+    if (!this.pessoaParaEditar || !this.pessoaParaEditar.id) {
+      console.error('Erro: ID da pessoa não encontrado');
+      return;
+    }
+
+    this.pessoaParaEditar = {
+      id: this.pessoaParaEditar.id,
+      nome: this.nome,
+      telefone: this.telefone,
+      email: this.email
+    }
+    this.pessoaService.editPessoa(this.pessoaParaEditar).subscribe(()=>{
+      console.log('pessoa editada com sucesso');
+    });
   }
 
-  abrirModal(pessoaSelecionada: Pessoa) {
+  abrirModal(pessoaSelecionada: Pessoa){
+    this.pessoaParaEditar = {...pessoaSelecionada};
     this.nome = pessoaSelecionada.nome;
     this.telefone = pessoaSelecionada.telefone;
     this.email = pessoaSelecionada.email;
+    
   }
 
   

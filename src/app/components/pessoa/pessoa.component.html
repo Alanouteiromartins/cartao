@@ -45,7 +45,8 @@
                             <label for="email" class="form-label">E-mail</label>
                             <input name="email" [(ngModel)]="email" type="email" class="form-control" id="email" placeholder="Digite seu e-mail" >
                         </div>
-                        <button type="submit" (ngSubmit)="addPessoa()" class="btn btn-primary w-100">Cadastrar</button>
+                        <button type="submit" (click)="addPessoa()" class="btn btn-primary w-25 mx-1">Cadastrar</button>
+                        <button type="submit" (click)="editPessoa()" class="btn btn-primary w-25">Atualizar</button>
                     </form>
                 </div>
             </div>
