@@ -1,51 +1,53 @@
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Lista de Pessoas</h2>
-    <div class="d-flex justify-content-end mb-3">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCadastro">Adicionar</button>
+<div class="envolver">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Lista de Pessoas</h2>
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCadastro">Adicionar</button>
+        </div>
+        
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pessoa of pessoas">
+                    <td>{{pessoa.nome}}</td>
+                    <td>{{pessoa.telefone}}</td>
+                    <td>{{pessoa.email}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     
-    <table class="table table-hover table-bordered text-center">
-        <thead class="table-dark">
-            <tr>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let pessoa of pessoas">
-                <td>{{pessoa.nome}}</td>
-                <td>{{pessoa.telefone}}</td>
-                <td>{{pessoa.email}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Cadastrar Pessoa</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
-                </form>
+    <!-- Modal -->
+    <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Cadastrar Pessoa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="(99) 99999-9999" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

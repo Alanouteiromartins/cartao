@@ -30,10 +30,6 @@ export class ComprasComponent {
   compras: Compra[] = this.compraService.getCompras();
 
   salvar(){
-    const modal = document.getElementById('modalCompra');
-    const backdrop = document.querySelector('.modal-backdrop');
-  
-
     const novacompra = {
       descricao: this.descricao,
       valor: this.valor,
@@ -42,7 +38,7 @@ export class ComprasComponent {
       devedor: this.devedor
     }
 
-    this.compras.push(novacompra);
+    this.compraService.addCompra(novacompra);
   }
 
 

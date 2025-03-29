@@ -23,4 +23,16 @@ export class CompraService {
       return this.compras;
     }
 
+    addCompra(compra: Compra){
+      const novaCompra = {
+        descricao: compra.descricao,
+        valor: compra.valor,
+        data: compra.data,
+        parcelas: compra.parcelas,
+        devedor: compra.devedor
+      }
+
+      this.compras.push(novaCompra);
+    }
+
 }

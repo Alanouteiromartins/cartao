@@ -18,9 +18,12 @@ a, span {
 .navbar-nav .nav-link.active {
     border-bottom: 3px solid #f8f9fa !important; /* Linha branca na parte inferior */
     color: #f8f9fa !important;
-    font-weight: bold;
 }
 
 .navbar {
     padding: 0;
+}
+
+.navbar-nav a {
+    height: 80px;
 }
