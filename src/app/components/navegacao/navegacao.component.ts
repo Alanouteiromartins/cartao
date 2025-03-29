@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navegacao',
@@ -11,4 +11,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavegacaoComponent {
 
+  router: Router = new Router();
+
+  sair(){
+    setTimeout(() =>{
+      this.router.navigate(['login']);
+    }, 500);
+  }
 }
