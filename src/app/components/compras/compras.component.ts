@@ -35,7 +35,6 @@ export class ComprasComponent implements OnInit {
   ngOnInit(): void {
       this.getCompras();
       this.getPessoas();
-      this.getParcelas();
   }
 
   getCompras(){
@@ -51,12 +50,6 @@ export class ComprasComponent implements OnInit {
     })
   }
 
-  getParcelas(){
-    this.parcelaService.getParcelas().subscribe((parcelas) =>{
-      this.parcelas = parcelas;
-      console.log(parcelas);
-    })
-  }
 
   getPessoas(){
     this.pessoaService.getPessoas().subscribe((pessoas)=>{

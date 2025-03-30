@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertaService } from '../../services/alerta.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
+  constructor(private alertaService: AlertaService){}
+  confirmar = false;
+
   serviceRouter: Router = new Router;
 
   inputEmail: string = '';
@@ -21,7 +25,7 @@ export class LoginComponent {
     if(this.inputEmail === 'admin' && this.inputPassword === '12345'){
       this.serviceRouter.navigate(['pessoas']);
     }else{
-      alert('Usuário ou senha inválidos');
+      this.confirmar = true;
     }
   }
 

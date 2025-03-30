@@ -10,8 +10,4 @@ export class ParcelaService {
 
   constructor(private http: HttpClient) { }
 
-
-  getParcelas(){
-    return this.http.get<Parcela[]>(`${environment.apiUrl}/parcelas`);
-  }
 }
