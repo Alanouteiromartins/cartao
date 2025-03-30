@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Compra } from '../../interfaces/compra.interface';
 import { Pessoa } from '../../interfaces/pessoa.interface.';
 import { CommonModule } from '@angular/common';
@@ -14,13 +14,25 @@ import { CompraService } from '../../services/compra.service';
   templateUrl: './compras.component.html',
   styleUrl: './compras.component.css'
 })
-export class ComprasComponent {
+export class ComprasComponent implements OnInit {
 
-  compras: Compra [] = [];
+  constructor(private compraService: CompraService){}
+
+  compras: Compra[] = [];
 
   descricao: string = '';
   valor!: number;
   data!: Date;
   parcelas!: number;
   devedor!: Pessoa;
+
+  ngOnInit(): void {
+      this.getCompras();
+  }
+
+  getCompras(){
+    this.compraService.getCompras().subscribe((compras) =>{
+      this.compras = compras;
+    })
+  }
 }
