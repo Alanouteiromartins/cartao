@@ -20,13 +20,13 @@
                     <td>{{compra.descricao}}</td>
                     <td>{{compra.valor | currency:'BRL'}}</td>
                     <td>{{compra.data | date:'dd/MM/yyyy'}}</td>
-                    <td>{{compra.parcelas}}</td>
+                    <td>{{compra.qtdParcelas}}</td>
                     <td>{{compra.devedor?.nome}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -51,14 +51,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="parcelas" class="form-label">Quantidade de Parcelas</label>
-                            <input [(ngModel)]="parcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" required>
+                            <input [(ngModel)]="qtdparcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" required>
                         </div>
                         <div class="mb-3">
                             <label for="devedor" class="form-label">Devedor</label>
-                            <select [(ngModel)]="devedor" name="devedor" class="form-select" id="devedor" required>
-                                <option value="" disabled selected>Selecione o devedor</option>
-                                <option>
-                                    Alan</option>
+                            <select [(ngModel)]="Devedor" name="devedor" class="form-select" id="devedor" required>
+                                <option [ngValue]="null" disabled selected>Selecione o devedor</option>
+                                <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">
+                                    {{pessoa.nome}}
+                                </option>
                             </select>
                         </div>
                         <button  type="submit" class="btn btn-primary w-100">Salvar</button>

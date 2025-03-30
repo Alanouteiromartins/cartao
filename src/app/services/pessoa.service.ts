@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Pessoa } from '../interfaces/pessoa.interface.';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Observable, map } from 'rxjs';
 
 
 @Injectable({
@@ -25,6 +26,12 @@ export class PessoaService {
 
   deletePessoa(id: string){
     return this.http.delete(`${environment.apiUrl}/pessoas/${id}`);
+  }
+
+  encontrarDevedor(id: string): Observable<Pessoa | undefined> {
+    return this.http.get<Pessoa[]>(`${environment.apiUrl}/pessoas`).pipe(
+      map(pessoas => pessoas.find(pessoa => pessoa.id === id))
+    );
   }
   
 }

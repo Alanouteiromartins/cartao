@@ -102,24 +102,27 @@ export class PessoaComponent implements OnInit{
 
   }
 
-  deletePessoa(){
+  async deletePessoa(){
     if (!this.pessoaParaEditar || !this.pessoaParaEditar.id) {
       this.alertaService.erro("Pessoa não encontrada");
       return;
     }
 
-    this.pessoaParaEditar = {
-      id: this.pessoaParaEditar.id,
-      ...this.pessoaParaEditar
+    const confirmacao = await this.alertaService.confirmar("Tem certeza?");
+
+    if(confirmacao){
+      this.pessoaParaEditar = {
+        id: this.pessoaParaEditar.id,
+        ...this.pessoaParaEditar
+      }
+      if(this.pessoaParaEditar.id){
+        this.pessoaService.deletePessoa(this.pessoaParaEditar.id).subscribe(()=>{
+          this.alertaService.sucesso(`Pessoa com id ${this.pessoaParaEditar.id} excluída com sucesso`);
+          this.getPessoas();
+          this.limparModal();
+        })
+      }
     }
-    if(this.pessoaParaEditar.id){
-      this.pessoaService.deletePessoa(this.pessoaParaEditar.id).subscribe(()=>{
-        this.alertaService.sucesso(`Pessoa com id ${this.pessoaParaEditar.id} excluída com sucesso`);
-        this.getPessoas();
-        this.limparModal();
-      })
-    }
-    
   }
 
   abrirModal(pessoaSelecionada: Pessoa){
