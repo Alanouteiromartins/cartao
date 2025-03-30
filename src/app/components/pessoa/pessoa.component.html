@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Lista de Pessoas</h2>
         <div class="d-flex justify-content-end mb-3">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCadastro">Adicionar</button>
+            <button class="btn btn-primary" (click)="limparModal()" data-bs-toggle="modal" data-bs-target="#modalCadastro">Adicionar</button>
         </div>
         
         <table class="table table-hover table-bordered text-center">
@@ -29,7 +29,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabel">Cadastrar Pessoa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" (click)="removerPessoaModal()" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -46,7 +46,8 @@
                             <input name="email" [(ngModel)]="email" type="email" class="form-control" id="email" placeholder="Digite seu e-mail" >
                         </div>
                         <button type="submit" (click)="addPessoa()" class="btn btn-primary w-25 mx-1">Cadastrar</button>
-                        <button type="submit" (click)="editPessoa()" class="btn btn-primary w-25">Atualizar</button>
+                        <button type="submit" (click)="editPessoa()" class="btn btn-success w-25 mx-1">Atualizar</button>
+                        <button type="submit" (click)="deletePessoa()" class="btn btn-danger w-25 mx-1">Excluir</button>
                     </form>
                 </div>
             </div>

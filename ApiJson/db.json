@@ -1,12 +1,6 @@
 {
   "pessoas": [
     {
-      "id": "469b",
-      "nome": "Alan",
-      "telefone": "(51)99346-1726",
-      "email": "alanoutmartins@gmail.com"
-    },
-    {
       "id": "dedc",
       "nome": "Tiffani",
       "telefone": "(51)99370-3500",
@@ -25,10 +19,10 @@
       "email": "avila_sl@outlook.com"
     },
     {
-      "id": "06bd",
-      "nome": "",
-      "telefone": "",
-      "email": ""
+      "id": "0436",
+      "nome": "Alan",
+      "telefone": "(51)99346-1726",
+      "email": "alanoutmartins@gmail.com"
     }
   ],
   "compras": [

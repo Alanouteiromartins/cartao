@@ -22,5 +22,9 @@ export class PessoaService {
   editPessoa(pessoa: Pessoa){
     return this.http.put<Pessoa>(`${environment.apiUrl}/pessoas/${pessoa.id}`, pessoa);
   }
+
+  deletePessoa(id: string){
+    return this.http.delete(`${environment.apiUrl}/pessoas/${id}`);
+  }
   
 }

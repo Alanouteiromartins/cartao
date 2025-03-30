@@ -3,6 +3,7 @@ import { Pessoa } from '../../interfaces/pessoa.interface.';
 import { CommonModule } from '@angular/common';
 import { PessoaService } from '../../services/pessoa.service';
 import { FormsModule } from '@angular/forms';
+import { AlertaService } from '../../services/alerta.service';
 
 
 @Component({
@@ -19,8 +20,7 @@ export class PessoaComponent implements OnInit{
   telefone: string = '';
   email: string = '';
 
-
-  constructor(private pessoaService: PessoaService){}
+  constructor(private pessoaService: PessoaService, private alertaService: AlertaService){}
 
   ngOnInit(): void {
       this.getPessoas();
@@ -30,6 +30,21 @@ export class PessoaComponent implements OnInit{
     this.pessoaService.getPessoas().subscribe((pessoas) =>{
       this.pessoas = pessoas;
     })
+  }
+
+  limparModal(){
+    this.nome = '';
+    this.telefone = '';
+    this.email = '';
+  }
+
+  removerPessoaModal(){
+    this.pessoaParaEditar = {
+      id: undefined,
+      nome: '',
+      telefone: '',
+      email: ''
+    }
   }
 
   addPessoa(){
@@ -43,15 +58,13 @@ export class PessoaComponent implements OnInit{
       this.pessoas.push(pessoa);
     })
 
-    this.nome = '';
-    this.telefone = '';
-    this.email = '';
+    this.limparModal();
   }
 
   editPessoa(){
 
     if (!this.pessoaParaEditar || !this.pessoaParaEditar.id) {
-      console.error('Erro: ID da pessoa não encontrado');
+      this.alertaService.erro("Pessoa não encontrada");
       return;
     }
 
@@ -62,8 +75,31 @@ export class PessoaComponent implements OnInit{
       email: this.email
     }
     this.pessoaService.editPessoa(this.pessoaParaEditar).subscribe(()=>{
-      console.log('pessoa editada com sucesso');
+      this.alertaService.sucesso("Pessoa editada com sucesso!");
+      this.getPessoas();
+      this.limparModal();
     });
+
+  }
+
+  deletePessoa(){
+    if (!this.pessoaParaEditar || !this.pessoaParaEditar.id) {
+      this.alertaService.erro("Pessoa não encontrada");
+      return;
+    }
+
+    this.pessoaParaEditar = {
+      id: this.pessoaParaEditar.id,
+      ...this.pessoaParaEditar
+    }
+    if(this.pessoaParaEditar.id){
+      this.pessoaService.deletePessoa(this.pessoaParaEditar.id).subscribe(()=>{
+        this.alertaService.sucesso(`Pessoa com id ${this.pessoaParaEditar.id} excluída com sucesso`);
+        this.getPessoas();
+        this.limparModal();
+      })
+    }
+    
   }
 
   abrirModal(pessoaSelecionada: Pessoa){
@@ -71,7 +107,6 @@ export class PessoaComponent implements OnInit{
     this.nome = pessoaSelecionada.nome;
     this.telefone = pessoaSelecionada.telefone;
     this.email = pessoaSelecionada.email;
-    
   }
 
   
