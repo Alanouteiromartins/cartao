@@ -36,6 +36,17 @@ export class PessoaComponent implements OnInit{
     this.nome = '';
     this.telefone = '';
     this.email = '';
+
+    if(this.nome === '' || this.telefone === '' || this.email === ''){
+      const btnEditar = document.getElementById('btnEditar') as HTMLButtonElement;
+      const btnExcluir = document.getElementById('btnExcluir') as HTMLButtonElement;
+      const btnCadastrar = document.getElementById('btnCadastrar') as HTMLButtonElement;
+
+      if(btnCadastrar) btnCadastrar.style.display = 'inline-block';
+      if(btnEditar) btnEditar.style.display = 'none';
+      if(btnExcluir) btnExcluir.style.display = 'none';
+    }
+    
   }
 
   removerPessoaModal(){
@@ -48,6 +59,12 @@ export class PessoaComponent implements OnInit{
   }
 
   addPessoa(){
+
+    if(this.nome === '' || this.telefone === '' || this.email === ''){
+      this.alertaService.erro("Por favor, preenche todos os campos");
+      return
+    }
+
     const novaPessoa = {
       nome: this.nome,
       telefone: this.telefone,
@@ -55,7 +72,10 @@ export class PessoaComponent implements OnInit{
     }
 
     this.pessoaService.addPessoa(novaPessoa).subscribe((pessoa)=>{
+      this.alertaService.sucesso("Pessoa adicionada com sucesso!");
       this.pessoas.push(pessoa);
+    }, (error) =>{
+      this.alertaService.erro("Erro ao adicionar pessoa!");
     })
 
     this.limparModal();
@@ -107,6 +127,14 @@ export class PessoaComponent implements OnInit{
     this.nome = pessoaSelecionada.nome;
     this.telefone = pessoaSelecionada.telefone;
     this.email = pessoaSelecionada.email;
+
+    const btnEditar = document.getElementById('btnEditar') as HTMLButtonElement;
+    const btnExcluir = document.getElementById('btnExcluir') as HTMLButtonElement;
+    const btnCadastrar = document.getElementById('btnCadastrar') as HTMLButtonElement;
+
+    if(btnCadastrar) btnCadastrar.style.display = 'none';
+    if(btnEditar) btnEditar.style.display = 'inline-block';
+    if(btnExcluir) btnExcluir.style.display = 'inline-block';
   }
 
   
