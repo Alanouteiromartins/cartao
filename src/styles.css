@@ -11,8 +11,21 @@ body {
 
 .envolver{
     padding: 10px;
-    margin: 20px;
+    max-width: 1080px;
+    margin: 20px auto;
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1200px){
+    .envolver{
+        margin: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .envolver{
+        font-size: 8px;
+    }
 }
