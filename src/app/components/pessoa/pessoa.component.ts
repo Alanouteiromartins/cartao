@@ -108,7 +108,7 @@ export class PessoaComponent implements OnInit{
       return;
     }
 
-    const confirmacao = await this.alertaService.confirmar("Tem certeza?");
+    const confirmacao = await this.alertaService.confirmar(`Quer excluir ${this.pessoaParaEditar.nome}?`);
 
     if(confirmacao){
       this.pessoaParaEditar = {
