@@ -24,6 +24,7 @@ export class LoginComponent {
   logar(){
     if(this.inputEmail === 'admin' && this.inputPassword === '12345'){
       this.serviceRouter.navigate(['pessoas']);
+      localStorage.setItem('usuario', JSON.stringify({nome: 'Teste'}));
     }else{
       this.confirmar = true;
     }

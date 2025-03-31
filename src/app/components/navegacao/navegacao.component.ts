@@ -16,6 +16,7 @@ export class NavegacaoComponent {
   sair(){
     setTimeout(() =>{
       this.router.navigate(['login']);
+      localStorage.removeItem('usuario');
     }, 500);
   }
 }
