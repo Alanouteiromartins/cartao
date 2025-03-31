@@ -16,7 +16,7 @@ export class AppComponent {
   router: Router = new Router();
 
   paginaLogin(): boolean {
-    return this.router.url === '/login';
+    return this.router.url === '/login' || this.router.url === '/registro';
   }
 
   title = 'cartao';

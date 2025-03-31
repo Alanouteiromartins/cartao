@@ -16,7 +16,7 @@
                     <div *ngIf="confirmar" class="alert alert-danger" role="alert">Usuário ou senha inválidos</div>
                     <button type="submit" (click)="logar()" class="btn btn-primary w-100">Entrar</button>
                     <div class="sign-up mt-4">
-                        Não tem uma conta? <a href="#">Criar conta</a>
+                        Não tem uma conta? <a (click)="criarConta()" routerLink="registro">Criar conta</a>
                     </div>
                 </form>
             </div>
