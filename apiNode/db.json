@@ -1,0 +1,124 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Alan",
+      "email": "alanoutmartins@gmail.com",
+      "senha": "93298822",
+      "pessoas": [
+        {
+          "id": "9999",
+          "nome": "Tiffani",
+          "telefone": "(51)99370-3500",
+          "email": "tiffani.avila@outlook.com"
+        },
+        {
+          "id": "e68f",
+          "nome": "Valdemar",
+          "telefone": "(51)99366-2284",
+          "email": "valdo.65@hotmail.com"
+        },
+        {
+          "id": "9fbc",
+          "nome": "Alcione",
+          "telefone": "(51)99410-5356",
+          "email": "avila_sl@outlook.com"
+        },
+        {
+          "id": "0436",
+          "nome": "Alan",
+          "telefone": "(51)99346-1726",
+          "email": "alanoutmartins@gmail.com"
+        }
+      ],
+      "compras": [
+        {
+          "descricao": "tenis",
+          "valor": 760,
+          "data": "2025-03-24",
+          "qtdParcelas": 6,
+          "idDevedor": "0436",
+          "id": "5fb0"
+        },
+        {
+          "descricao": "anel",
+          "valor": 89,
+          "data": "2025-02-19",
+          "qtdParcelas": 2,
+          "idDevedor": "dedc",
+          "id": "04ec",
+          "parcelas": [
+            {
+              "valor": 44.5,
+              "dataVencimento": "2025-03-10",
+              "parcela": 1,
+              "idCompra": "04ec",
+              "id": "5fb0"
+            },
+            {
+              "valor": 44.5,
+              "dataVencimento": "2025-04-10",
+              "parcela": 2,
+              "idCompra": "04ec",
+              "id": "55fb0"
+            }
+          ]
+        },
+        {
+          "descricao": "óleo",
+          "valor": 250,
+          "data": "2025-01-20",
+          "qtdParcelas": 6,
+          "idDevedor": "e68f",
+          "id": "a9fb"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Tiffani",
+      "email": "tiffani.avila@outlook.com",
+      "senha": "sandinene",
+      "pessoas": [
+        {
+          "id": "dedc",
+          "nome": "Tiffani",
+          "telefone": "(51)99370-3500",
+          "email": "tiffani.avila@outlook.com"
+        },
+        {
+          "id": "0436",
+          "nome": "Alan",
+          "telefone": "(51)99346-1726",
+          "email": "alanoutmartins@gmail.com"
+        }
+      ],
+      "compras": [
+        {
+          "descricao": "anel",
+          "valor": 89,
+          "data": "2025-02-19",
+          "qtdParcelas": 2,
+          "idDevedor": "dedc",
+          "id": "04ec",
+          "parcelas": [
+            {
+              "valor": 44.5,
+              "dataVencimento": "2025-03-10",
+              "parcela": 1,
+              "idCompra": "04ec",
+              "id": "5fb0"
+            },
+            {
+              "valor": 44.5,
+              "dataVencimento": "2025-04-10",
+              "parcela": 2,
+              "idCompra": "04ec",
+              "id": "55fb0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,16 @@
 {
+  "usuario": [
+    {
+      "nome": "Alan",
+      "email": "alanoutmartins@gmail.com",
+      "senha": "93298822"
+    },
+    {
+      "nome": "Tiffani",
+      "email": "tiffani.avila@outlook.com",
+      "senha": "sandinene"
+    }
+  ],
   "pessoas": [
     {
       "id": "dedc",

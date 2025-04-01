@@ -9,10 +9,12 @@ import { Parcela } from '../interfaces/parcela.interface';
 })
 export class CompraService {
 
+  id = 1;
+
   constructor(private http: HttpClient){}
 
   getCompras(){
-    return this.http.get<Compra[]>(`${environment.apiUrl}/compras`);
+    return this.http.get<Compra[]>(`${environment.apiUrl}/${this.id}/compras`);
   }
 
   addCompra(compra: Compra){

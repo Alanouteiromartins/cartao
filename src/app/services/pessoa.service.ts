@@ -10,26 +10,28 @@ import { Observable, map } from 'rxjs';
 })
 export class PessoaService {
 
+  id = 1;
+
   constructor(private http: HttpClient){}
 
   getPessoas(){
-    return this.http.get<Pessoa[]>(`${environment.apiUrl}/pessoas`);
+    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${this.id}/pessoas`);
   }
 
   addPessoa(pessoa: Pessoa){
-    return this.http.post<Pessoa>(`${environment.apiUrl}/pessoas`, pessoa);
+    return this.http.post<Pessoa>(`${environment.apiUrl}/${this.id}/pessoas`, pessoa);
   }
 
   editPessoa(pessoa: Pessoa){
-    return this.http.put<Pessoa>(`${environment.apiUrl}/pessoas/${pessoa.id}`, pessoa);
+    return this.http.put<Pessoa>(`${environment.apiUrl}/${this.id}/pessoas/${pessoa.id}`, pessoa);
   }
 
   deletePessoa(id: string){
-    return this.http.delete(`${environment.apiUrl}/pessoas/${id}`);
+    return this.http.delete(`${environment.apiUrl}/${this.id}/pessoas/${id}`);
   }
 
   encontrarDevedor(id: string): Observable<Pessoa | undefined> {
-    return this.http.get<Pessoa[]>(`${environment.apiUrl}/pessoas`).pipe(
+    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${this.id}/pessoas`).pipe(
       map(pessoas => pessoas.find(pessoa => pessoa.id === id))
     );
   }
