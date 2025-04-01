@@ -7,6 +7,7 @@ import { PessoaService } from '../../services/pessoa.service';
 import { CompraService } from '../../services/compra.service';
 import { Parcela } from '../../interfaces/parcela.interface';
 import { ParcelaService } from '../../services/parcela.service';
+import { AlertaService } from '../../services/alerta.service';
 
 
 @Component({
@@ -20,11 +21,13 @@ export class ComprasComponent implements OnInit {
 
   constructor(private compraService: CompraService, 
               private pessoaService: PessoaService,
-              private parcelaService: ParcelaService){}
+              private parcelaService: ParcelaService,
+              private alertaService: AlertaService
+  ){}
 
   compras: Compra[] = [];
   pessoas: Pessoa[] = [];
-  parcelas: Parcela[] = [];
+  
 
   descricao: string = '';
   valor!: number;
@@ -50,10 +53,30 @@ export class ComprasComponent implements OnInit {
     })
   }
 
-
   getPessoas(){
     this.pessoaService.getPessoas().subscribe((pessoas)=>{
       this.pessoas = pessoas;
     })
+  }
+
+  addCompra(){
+
+    if(this.descricao === null || this.valor === null || this.data === null || this.qtdparcelas === null || this.Devedor ===null){
+      this.alertaService.erro("Preencha todos os campos");
+    }
+    if(this.Devedor){
+      const novaCompra= {
+        descricao: this.descricao,
+        valor: this.valor,
+        data:this.data,
+        qtdParcelas: this.qtdparcelas,
+        idDevedor: this.Devedor?.id,
+        devedor: this.Devedor
+      }
+      this.compraService.addCompra(novaCompra).subscribe((compra) =>{
+        this.compras.push(compra);
+      })
+      this.alertaService.sucesso("Compra cadastrada com sucesso!");
+    }
   }
 }

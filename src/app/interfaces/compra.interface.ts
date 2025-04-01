@@ -9,5 +9,5 @@ export interface Compra {
     qtdParcelas: number;
     idDevedor?: string;
     devedor?: Pessoa;
-    parcelas: Parcela[];
+    parcelas?: Parcela[];
   }

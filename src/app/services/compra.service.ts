@@ -18,9 +18,7 @@ export class CompraService {
   }
 
   addCompra(compra: Compra){
-    const parcelas: Parcela[] = [];
-    const valorParcela = compra.valor / compra.qtdParcelas;
-
+    return this.http.post<Compra>(`${environment.apiUrl}/${this.id}/compras`, compra);
   }
 
 }
