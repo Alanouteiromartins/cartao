@@ -165,6 +165,21 @@ app.get('/usuarios/:id/compras', (req, res) => {
     res.json(usuario.compras);
 });
 
+app.get('/usuarios/:id/compras/:compraId', (req, res) => {
+    const db = readDB();
+    const usuario = db.usuarios.find(u => u.id.toString() === req.params.id);
+    if (!usuario) {
+        return res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+
+    const compra = usuario.compras.find(c => c.id === req.params.compraId);
+    if (!compra) {
+        return res.status(404).json({ error: 'Pessoa não encontrada' });
+    }
+
+    res.json(compra);
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

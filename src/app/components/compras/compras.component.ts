@@ -27,12 +27,14 @@ export class ComprasComponent implements OnInit {
 
   compras: Compra[] = [];
   pessoas: Pessoa[] = [];
+
+  compraParaEditar!: Compra;
   
 
   descricao: string = '';
-  valor!: number;
+  valor?: number;
   data!: Date;
-  qtdparcelas!: number;
+  qtdparcelas?: number;
   Devedor: Pessoa | null = null;
 
   ngOnInit(): void {
@@ -59,6 +61,70 @@ export class ComprasComponent implements OnInit {
     })
   }
 
+  editCompra(){
+    if(!this.compraParaEditar || !this.compraParaEditar.id){
+      this.alertaService.erro("Compra não encontrada");
+      return;
+    }
+
+    this.compraParaEditar = {
+      id: this.compraParaEditar.id,
+      descricao: this.descricao,
+      valor: this.valor!,
+      data: this.data,
+      qtdParcelas: this.qtdparcelas!,
+      devedor: this.Devedor!,
+      idDevedor: this.Devedor?.id
+    }
+
+    console.log('Esse é o devedor antes de atualizar a compra', this.compraParaEditar.devedor);
+
+    this.compraService.editCompra(this.compraParaEditar).subscribe(()=>{
+      this.alertaService.sucesso("Compra atualizada com sucesso");
+      this.getCompras();
+      this.limparModal();
+    })
+  }
+
+  abrirModal(compraSelecionada: Compra){
+
+    this.compraParaEditar = {...compraSelecionada};
+    console.log('Esse é o devedor da compraParaEditar recem atribuido: ', this.compraParaEditar.devedor);
+
+    this.descricao = compraSelecionada.descricao;
+    this.valor = compraSelecionada.valor;
+    this.data = compraSelecionada.data;
+    this.qtdparcelas = compraSelecionada.qtdParcelas;
+    this.Devedor = this.pessoas.find(pessoa => pessoa.id === compraSelecionada.devedor?.id) ?? null;
+    
+
+    const btnSalvar = document.getElementById('btnSalvar') as HTMLButtonElement;
+    const btnAtualizar = document.getElementById('btnAtualizar') as HTMLButtonElement;
+    const btnExcluir = document.getElementById('btnExcluir') as HTMLButtonElement;
+
+    btnSalvar.style.display = 'none';
+    btnAtualizar.style.display = 'inline-block';
+    btnExcluir.style.display = 'inline-block';
+
+  }
+
+  limparModal(){
+
+    this.descricao = '';
+    delete this.valor;
+    this.data = '' as any;
+    delete this.qtdparcelas;
+    this.Devedor = null;
+
+    const btnSalvar = document.getElementById('btnSalvar') as HTMLButtonElement;
+    const btnAtualizar = document.getElementById('btnAtualizar') as HTMLButtonElement;
+    const btnExcluir = document.getElementById('btnExcluir') as HTMLButtonElement;
+
+    btnSalvar.style.display = 'block';
+    btnAtualizar.style.display = 'none';
+    btnExcluir.style.display = 'none';
+  }
+
   addCompra(){
 
     if(this.descricao === null || this.valor === null || this.data === null || this.qtdparcelas === null || this.Devedor ===null){
@@ -67,9 +133,9 @@ export class ComprasComponent implements OnInit {
     if(this.Devedor){
       const novaCompra= {
         descricao: this.descricao,
-        valor: this.valor,
+        valor: this.valor!,
         data:this.data,
-        qtdParcelas: this.qtdparcelas,
+        qtdParcelas: this.qtdparcelas!,
         idDevedor: this.Devedor?.id,
         devedor: this.Devedor
       }

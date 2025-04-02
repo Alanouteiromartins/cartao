@@ -21,4 +21,8 @@ export class CompraService {
     return this.http.post<Compra>(`${environment.apiUrl}/${this.id}/compras`, compra);
   }
 
+  editCompra(compra: Compra){
+    return this.http.put<Compra>(`${environment.apiUrl}/${this.id}/compras/${compra.id}`, compra);
+  }
+
 }

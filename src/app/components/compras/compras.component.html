@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Lista de Compras</h2>
         <div class="d-flex justify-content-end mb-3">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">Adicionar Compra</button>
+            <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">Adicionar</button>
         </div>
         
         <table class="table table-bordered table-hover text-center">
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody id="tabelaCompras">
-                <tr *ngFor="let compra of compras">
+                <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras">
                     <td>{{compra.descricao}}</td>
                     <td>{{compra.valor | currency:'BRL'}}</td>
                     <td>{{compra.data | date:'dd/MM/yyyy'}}</td>
@@ -62,7 +62,9 @@
                                 </option>
                             </select>
                         </div>
-                        <button  type="submit" (click)="addCompra()" class="btn btn-primary w-100">Salvar</button>
+                        <button id="btnSalvar"  type="submit" (click)="addCompra()" class="btn btn-primary w-100">Salvar</button>
+                        <button id="btnAtualizar" type="submit" (click)="editCompra()" class="btn btn-success w-25">Atualizar</button>
+                        <button id="btnExcluir" type="submit"  class="btn btn-danger w-25 ms-1">Excluir</button>
                     </form>
                 </div>
             </div>
