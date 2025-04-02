@@ -33,20 +33,6 @@
       ],
       "compras": [
         {
-          "descricao": "tenis",
-          "valor": 760,
-          "data": "2025-03-24",
-          "qtdParcelas": 6,
-          "idDevedor": "0436",
-          "id": "5fb0",
-          "devedor": {
-            "id": "9fbc",
-            "nome": "Alcione",
-            "telefone": "(51)99410-5356",
-            "email": "avila_sl@outlook.com"
-          }
-        },
-        {
           "descricao": "Anel",
           "valor": 89.01,
           "data": "2025-02-18",
@@ -91,20 +77,6 @@
           }
         },
         {
-          "id": "1743523094471",
-          "descricao": "Teste",
-          "valor": 10,
-          "data": "2025-04-02",
-          "qtdParcelas": 1,
-          "idDevedor": "e68f",
-          "devedor": {
-            "id": "e68f",
-            "nome": "Valdemar",
-            "telefone": "(51)99366-2284",
-            "email": "valdo.65@hotmail.com"
-          }
-        },
-        {
           "id": "1743523190609",
           "descricao": "Anel",
           "valor": 89,
@@ -121,7 +93,7 @@
         {
           "id": "1743552737140",
           "descricao": "iphone 14 pro max",
-          "valor": 5000,
+          "valor": 5199,
           "data": "2025-04-02",
           "qtdParcelas": 1,
           "idDevedor": "9999",

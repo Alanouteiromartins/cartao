@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Pessoa } from '../../interfaces/pessoa.interface.';
+import { Pessoa } from '../../interfaces/pessoa.interface';
 import { CommonModule } from '@angular/common';
 import { PessoaService } from '../../services/pessoa.service';
 import { FormsModule } from '@angular/forms';
 import { AlertaService } from '../../services/alerta.service';
+import { Usuario } from '../../interfaces/usuario.interface';
+import { UsuarioService } from '../../services/usuario.service';
 
 
 @Component({
@@ -15,15 +17,17 @@ import { AlertaService } from '../../services/alerta.service';
 })
 export class PessoaComponent implements OnInit{
   pessoas: Pessoa[] = []; 
+  usuarios:Usuario[] = [];
   pessoaParaEditar!: Pessoa; 
   nome: string = '';
   telefone: string = '';
   email: string = '';
 
-  constructor(private pessoaService: PessoaService, private alertaService: AlertaService){}
+  constructor(private pessoaService: PessoaService, private alertaService: AlertaService, private usuarioService: UsuarioService){}
 
   ngOnInit(): void {
       this.getPessoas();
+      this.getUsuarios();
   }
 
   getPessoas(){
@@ -140,5 +144,11 @@ export class PessoaComponent implements OnInit{
     if(btnExcluir) btnExcluir.style.display = 'inline-block';
   }
 
+
+  getUsuarios(){
+    this.usuarioService.getUsuarios().subscribe((usuarios)=>{
+      this.usuarios = usuarios;
+    })
+  }
   
 }

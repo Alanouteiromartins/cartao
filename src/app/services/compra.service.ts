@@ -25,4 +25,8 @@ export class CompraService {
     return this.http.put<Compra>(`${environment.apiUrl}/${this.id}/compras/${compra.id}`, compra);
   }
 
+  deleteCompra(id: string){
+    return this.http.delete(`${environment.apiUrl}/${this.id}/compras/${id}`);
+  }
+
 }

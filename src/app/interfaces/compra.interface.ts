@@ -1,5 +1,5 @@
 import { Parcela } from "./parcela.interface";
-import { Pessoa } from "./pessoa.interface.";
+import { Pessoa } from "./pessoa.interface";
 
 export interface Compra {
     id?: string;

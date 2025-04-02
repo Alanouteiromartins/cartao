@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Compra } from '../../interfaces/compra.interface';
-import { Pessoa } from '../../interfaces/pessoa.interface.';
+import { Pessoa } from '../../interfaces/pessoa.interface';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PessoaService } from '../../services/pessoa.service';
@@ -84,6 +84,24 @@ export class ComprasComponent implements OnInit {
       this.getCompras();
       this.limparModal();
     })
+  }
+
+  async deleteCompra(){
+    if(!this.compraParaEditar || !this.compraParaEditar.id){
+      this.alertaService.erro("Compra não encontrada");
+      return;
+    }
+
+    const confirmar = await this.alertaService.confirmar("Tem certeza que deseja excluir a compra selecionada?");
+    if(confirmar){
+      const id = this.compraParaEditar.id;
+
+      this.compraService.deleteCompra(id).subscribe(()=>{
+      this.alertaService.sucesso("Compra excluída com sucesso");
+      this.getCompras();
+      this.limparModal();
+    })
+    }
   }
 
   abrirModal(compraSelecionada: Compra){
