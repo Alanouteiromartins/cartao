@@ -3,6 +3,7 @@ import { Pessoa } from '../interfaces/pessoa.interface';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable, map } from 'rxjs';
+import { AuthService } from './auth.service';
 
 
 @Injectable({
@@ -10,28 +11,35 @@ import { Observable, map } from 'rxjs';
 })
 export class PessoaService {
 
-  id = 1;
+  constructor(private http: HttpClient, private authService: AuthService){}
 
-  constructor(private http: HttpClient){}
+  getUsuarioId(): string | null{
+    const usuario = this.authService.getUsuarioLogado();
+    return usuario ? usuario.id || null : null;
+  }
 
   getPessoas(){
-    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${this.id}/pessoas`);
+    const id = this.getUsuarioId();
+    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${id}/pessoas`);
   }
 
   addPessoa(pessoa: Pessoa){
-    return this.http.post<Pessoa>(`${environment.apiUrl}/${this.id}/pessoas`, pessoa);
+    const id = this.getUsuarioId();
+    return this.http.post<Pessoa>(`${environment.apiUrl}/${id}/pessoas`, pessoa);
   }
 
   editPessoa(pessoa: Pessoa){
-    return this.http.put<Pessoa>(`${environment.apiUrl}/${this.id}/pessoas/${pessoa.id}`, pessoa);
+    const id = this.getUsuarioId();
+    return this.http.put<Pessoa>(`${environment.apiUrl}/${id}/pessoas/${pessoa.id}`, pessoa);
   }
 
   deletePessoa(id: string){
-    return this.http.delete(`${environment.apiUrl}/${this.id}/pessoas/${id}`);
+    const idUser = this.getUsuarioId();
+    return this.http.delete(`${environment.apiUrl}/${idUser}/pessoas/${id}`);
   }
 
   encontrarDevedor(id: string): Observable<Pessoa | undefined> {
-    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${this.id}/pessoas`).pipe(
+    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${id}/pessoas`).pipe(
       map(pessoas => pessoas.find(pessoa => pessoa.id === id))
     );
   }
