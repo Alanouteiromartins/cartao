@@ -180,6 +180,38 @@ app.get('/usuarios/:id/compras/:compraId', (req, res) => {
     res.json(compra);
 });
 
+
+//buscar parcelas de uma compra
+app.get('/usuarios/:id/compras/:compraId/parcelas', (req, res) =>{
+    const db = readDB();
+    const usuario = db.usuarios.find(u => u.id.toString() === req.params.id);
+    if(!usuario){
+        return res.status(404).json({error: 'Usuário não encontrado'});
+    }
+
+    const compra = usuario.compras.find(c => c.id === req.params.compraId);
+    if(!compra) {
+        return res.status(404).json({error: 'Compra não encontrada'});
+    }
+
+    res.json(compra.parcelas);
+})
+
+//adicionar parcela em uma compra
+app.post('/usuarios/:id/compras/:compraId/parcelas', (req, res) => {
+    const db = readDB();
+    const usuario = db.usuarios.find(u => u.id == req.params.id);
+    if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
+
+    const compra = usuario.compras.find(c => c.id === req.params.compraId);
+    if(!compra) return res.status(404).json({error: 'Compra não encontrada'});
+
+    const novaParcela = { id: Date.now().toString(), ...req.body };
+    compra.parcelas.push(novaParcela);
+    writeDB(db);
+    res.status(201).json(novaParcela);
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

@@ -39,9 +39,8 @@ export class PessoaService {
   }
 
   encontrarDevedor(id: string): Observable<Pessoa | undefined> {
-    return this.http.get<Pessoa[]>(`${environment.apiUrl}/${id}/pessoas`).pipe(
-      map(pessoas => pessoas.find(pessoa => pessoa.id === id))
-    );
+    const idUser = this.getUsuarioId();
+    return this.http.get<Pessoa>(`${environment.apiUrl}/${idUser}/pessoas/${id}`);
   }
   
 }

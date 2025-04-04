@@ -52,6 +52,7 @@ export class ComprasComponent implements OnInit {
         }
       });
       this.compras = compras;
+      console.log(this.compras);
     })
   }
 
