@@ -17,6 +17,7 @@ export class RelatorioComponent {
   mes = 4;
   usuarioId = '';
   totalParcelas: number = 0;
+  totalPessoa: number = 0;
   parcelas: Parcela[]= [];
   parcelasPessoas: Parcela[] = [];
 
@@ -32,6 +33,7 @@ export class RelatorioComponent {
   getParcelasByUsuario(){
     this.parcelaService.getParcelasMesByPessoas(this.usuarioId, this.ano, this.mes).subscribe((parcelas)=>{
       this.parcelasPessoas = parcelas;
+      this.totalPessoa = parcelas.reduce((total, p)=> total + p.valor, 0);
     })
   }
 

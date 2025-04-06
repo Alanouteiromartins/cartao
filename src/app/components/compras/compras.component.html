@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody id="tabelaCompras">
-                <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras">
+                <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras.slice(0,5)">
                     <td>{{compra.descricao}}</td>
                     <td>{{compra.valor | currency:'BRL'}}</td>
                     <td>{{compra.data | date:'dd/MM/yyyy'}}</td>

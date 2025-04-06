@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let parcela of parcelas">
+      <tr *ngFor="let parcela of parcelas.slice(0,5) ">
         <td>{{parcela.dataVencimento | date: 'dd-MM-yyyy'}}</td>
         <td>{{parcela.valor | currency: 'BRL'}}</td>
         <td>{{parcela.parcela}}</td>
@@ -60,5 +60,14 @@
         <td>{{parcela.id}}</td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <th>Total por pessoa</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>{{totalPessoa}}</th>
+      </tr>
+    </tfoot>
   </table>
 </div>
