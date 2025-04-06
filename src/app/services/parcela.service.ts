@@ -21,6 +21,11 @@ export class ParcelaService {
     return this.http.get<Parcela[]>(`${environment.apiUrl}/${usuarioId}/parcelas/mes/${ano}/${mes}`);
   }
 
+  getParcelasMesByPessoas(idPessoa: string, ano: number, mes: number){
+    const usuarioId = this.getUsuarioId();
+    return this.http.get<Parcela[]>(`${environment.apiUrl}/${usuarioId}/parcelas/mes/${idPessoa}/${ano}/${mes}`);
+  }
+
   getParcelas(idCompra: string){
     const usuarioId = this.getUsuarioId();
     return this.http.get<Parcela[]>(`${environment.apiUrl}/${usuarioId}/compras/${idCompra}/parcelas`);

@@ -239,6 +239,30 @@ app.get('/usuarios/:id/parcelas/mes/:ano/:mes', (req, res) => {
   res.json(parcelasDoMes);
 });
 
+app.get('/usuarios/:id/parcelas/mes/:idPessoa/:ano/:mes', (req, res) => {
+  const db = readDB();
+  const usuario = db.usuarios.find(u => u.id == req.params.id);
+  if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
+
+  const ano = parseInt(req.params.ano);
+  const mes = parseInt(req.params.mes) - 1; // JS: janeiro é 0
+  const idPessoa = req.params.idPessoa;
+
+  const parcelasDoMes = [];
+
+  usuario.compras?.forEach(compra => {
+    if (compra.idDevedor == idPessoa) {
+      compra.parcelas?.forEach(parcela => {
+        const data = new Date(parcela.dataVencimento);
+        if (data.getFullYear() === ano && data.getMonth() === mes) {
+          parcelasDoMes.push(parcela);
+        }
+      });
+    }
+  });
+
+  res.json(parcelasDoMes);
+});
 
 
 app.listen(PORT, () => {

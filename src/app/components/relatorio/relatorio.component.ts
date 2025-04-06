@@ -15,14 +15,23 @@ export class RelatorioComponent {
 
   ano = 2025;
   mes = 4;
+  usuarioId = '';
+  totalParcelas: number = 0;
   parcelas: Parcela[]= [];
+  parcelasPessoas: Parcela[] = [];
 
   constructor(private parcelaService: ParcelaService){}
 
   getParcelasMes(){
     this.parcelaService.getParcelasMes(this.ano, this.mes).subscribe((parcelas)=>{
       this.parcelas = parcelas;
-      console.log(parcelas);
+      this.totalParcelas = parcelas.reduce((total, p) => total + p.valor, 0);
+    })
+  }
+
+  getParcelasByUsuario(){
+    this.parcelaService.getParcelasMesByPessoas(this.usuarioId, this.ano, this.mes).subscribe((parcelas)=>{
+      this.parcelasPessoas = parcelas;
     })
   }
 

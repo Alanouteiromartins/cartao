@@ -22,5 +22,43 @@
         <td>{{parcela.id}}</td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <th>Total Fatura</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>{{totalParcelas}}</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<tr></tr>
+<input name="mes" [(ngModel)]="mes" type="number" placeholder="mes">
+<input name="ano" [(ngModel)]="ano" type="number" placeholder="ano">
+<input name="pessoa" [(ngModel)]="usuarioId" type="text">
+<button (click)="getParcelasByUsuario()">carregar</button>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Data Vencimento</th>
+        <th>Valor</th>
+        <th>Parcela</th>
+        <th>ID compra</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parcela of parcelasPessoas">
+        <td>{{parcela.dataVencimento | date: 'dd-MM-yyyy'}}</td>
+        <td>{{parcela.valor | currency: 'BRL'}}</td>
+        <td>{{parcela.parcela}}</td>
+        <td>{{parcela.idCompra}}</td>
+        <td>{{parcela.id}}</td>
+      </tr>
+    </tbody>
   </table>
 </div>
