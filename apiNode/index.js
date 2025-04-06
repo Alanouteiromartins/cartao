@@ -199,18 +199,47 @@ app.get('/usuarios/:id/compras/:compraId/parcelas', (req, res) =>{
 
 //adicionar parcela em uma compra
 app.post('/usuarios/:id/compras/:compraId/parcelas', (req, res) => {
-    const db = readDB();
-    const usuario = db.usuarios.find(u => u.id == req.params.id);
-    if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
+  const db = readDB();
+  const usuario = db.usuarios.find(u => u.id == req.params.id);
+  if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
 
-    const compra = usuario.compras.find(c => c.id === req.params.compraId);
-    if(!compra) return res.status(404).json({error: 'Compra não encontrada'});
+  const compra = usuario.compras.find(c => c.id === req.params.compraId);
+  if (!compra) return res.status(404).json({ error: 'Compra não encontrada' });
 
-    const novaParcela = { id: Date.now().toString(), ...req.body };
-    compra.parcelas.push(novaParcela);
-    writeDB(db);
-    res.status(201).json(novaParcela);
+  if (!compra.parcelas) {
+    compra.parcelas = [];
+}
+
+  const novaParcela = { id: Date.now().toString(), ...req.body };
+  compra.parcelas.push(novaParcela);
+
+  writeDB(db);
+  res.status(201).json(novaParcela);
 });
+
+app.get('/usuarios/:id/parcelas/mes/:ano/:mes', (req, res) => {
+  const db = readDB();
+  const usuario = db.usuarios.find(u => u.id == req.params.id);
+  if (!usuario) return res.status(404).json({ error: 'Usuário não encontrado' });
+
+  const ano = parseInt(req.params.ano);
+  const mes = parseInt(req.params.mes) - 1; // JS usa mês de 0 a 11
+
+  const parcelasDoMes = [];
+
+  usuario.compras?.forEach(compra => {
+    compra.parcelas?.forEach(parcela => {
+      const data = new Date(parcela.dataVencimento);
+      if (data.getFullYear() === ano && data.getMonth() === mes) {
+        parcelasDoMes.push(parcela);
+      }
+    });
+  });
+
+  res.json(parcelasDoMes);
+});
+
+
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);

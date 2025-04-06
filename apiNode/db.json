@@ -53,6 +53,27 @@
               "parcela": 2,
               "idCompra": "04ec",
               "id": "55fb0"
+            },
+            {
+              "id": "1743964604635",
+              "valor": 500,
+              "dataVencimento": "2025-03-10T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "04ec"
+            },
+            {
+              "id": "1743964611750",
+              "valor": 500,
+              "dataVencimento": "2025-03-10T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "04ec"
+            },
+            {
+              "id": "1743964614850",
+              "valor": 500,
+              "dataVencimento": "2025-03-10T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "04ec"
             }
           ],
           "devedor": {
@@ -77,10 +98,68 @@
           }
         },
         {
-          "id": "1743523190609",
-          "descricao": "Anel",
-          "valor": 89,
-          "data": "2025-03-07",
+          "id": "1743968015630",
+          "descricao": "tenis cross",
+          "valor": 350,
+          "data": "2025-02-07",
+          "qtdParcelas": 6,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1743968015660",
+              "valor": 58.33,
+              "dataVencimento": "2025-03-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1743968015630"
+            },
+            {
+              "id": "1743968015681",
+              "valor": 58.33,
+              "dataVencimento": "2025-04-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1743968015630"
+            },
+            {
+              "id": "1743968015688",
+              "valor": 58.33,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1743968015630"
+            },
+            {
+              "id": "1743968015696",
+              "valor": 58.33,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1743968015630"
+            },
+            {
+              "id": "1743968015724",
+              "valor": 58.33,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 6,
+              "idCompra": "1743968015630"
+            },
+            {
+              "id": "1743968015758",
+              "valor": 58.33,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "1743968015630"
+            }
+          ]
+        },
+        {
+          "id": "1743969687170",
+          "descricao": "iphone 14 pro max",
+          "valor": 200,
+          "data": "2025-03-12",
           "qtdParcelas": 2,
           "idDevedor": "9999",
           "devedor": {
@@ -88,21 +167,23 @@
             "nome": "Tiffani",
             "telefone": "(51)99370-3500",
             "email": "tiffani.avila@outlook.com"
-          }
-        },
-        {
-          "id": "1743552737140",
-          "descricao": "iphone 14 pro max",
-          "valor": 5199,
-          "data": "2025-04-02",
-          "qtdParcelas": 1,
-          "idDevedor": "9999",
-          "devedor": {
-            "id": "9999",
-            "nome": "Tiffani",
-            "telefone": "(51)99370-3500",
-            "email": "tiffani.avila@outlook.com"
-          }
+          },
+          "parcelas": [
+            {
+              "id": "1743969687191",
+              "valor": 100,
+              "dataVencimento": "2025-04-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1743969687170"
+            },
+            {
+              "id": "1743969687214",
+              "valor": 100,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1743969687170"
+            }
+          ]
         }
       ]
     },

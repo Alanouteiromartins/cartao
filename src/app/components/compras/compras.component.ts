@@ -19,7 +19,7 @@ import { AlertaService } from '../../services/alerta.service';
 })
 export class ComprasComponent implements OnInit {
 
-  constructor(private compraService: CompraService, 
+  constructor(private compraService: CompraService,
               private pessoaService: PessoaService,
               private parcelaService: ParcelaService,
               private alertaService: AlertaService
@@ -29,7 +29,7 @@ export class ComprasComponent implements OnInit {
   pessoas: Pessoa[] = [];
 
   compraParaEditar!: Compra;
-  
+
 
   descricao: string = '';
   valor?: number;
@@ -115,7 +115,7 @@ export class ComprasComponent implements OnInit {
     this.data = compraSelecionada.data;
     this.qtdparcelas = compraSelecionada.qtdParcelas;
     this.Devedor = this.pessoas.find(pessoa => pessoa.id === compraSelecionada.devedor?.id) ?? null;
-    
+
 
     const btnSalvar = document.getElementById('btnSalvar') as HTMLButtonElement;
     const btnAtualizar = document.getElementById('btnAtualizar') as HTMLButtonElement;
@@ -158,8 +158,35 @@ export class ComprasComponent implements OnInit {
         idDevedor: this.Devedor?.id,
         devedor: this.Devedor
       }
+
       this.compraService.addCompra(novaCompra).subscribe((compra) =>{
         this.compras.push(compra);
+
+        //parcelas
+        const parcelas: Parcela[] = [];
+        const datainicial = new Date(this.data);
+        const valorParcela = compra.valor / compra.qtdParcelas;
+
+        for(let i = 0; i < compra.qtdParcelas; i++){
+          const vencimento = new Date(datainicial);
+          vencimento.setMonth(vencimento.getMonth() + i + 1);
+          vencimento.setDate(10);
+
+          const parcela: Parcela = {
+            valor: parseFloat(valorParcela.toFixed(2)),
+            dataVencimento: vencimento,
+            parcela: i + 1,
+            idCompra: compra.id!
+          };
+
+          console.log('Enviando parcela:', parcela);
+          this.parcelaService.addParcela(compra.id!, parcela).subscribe(() => {
+          console.log(`Parcela ${i + 1} adicionada`);
+          });
+
+          parcelas.push(parcela);
+        }
+        compra.parcelas = parcelas;
       })
       this.alertaService.sucesso("Compra cadastrada com sucesso!");
     }

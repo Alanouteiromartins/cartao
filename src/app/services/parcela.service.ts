@@ -16,13 +16,29 @@ export class ParcelaService {
     return usuario ? usuario.id || null : null;
   }
 
+  getParcelasMes(ano: number, mes: number){
+    const usuarioId = this.getUsuarioId();
+    return this.http.get<Parcela[]>(`${environment.apiUrl}/${usuarioId}/parcelas/mes/${ano}/${mes}`);
+  }
+
   getParcelas(idCompra: string){
     const usuarioId = this.getUsuarioId();
     return this.http.get<Parcela[]>(`${environment.apiUrl}/${usuarioId}/compras/${idCompra}/parcelas`);
   }
 
   addParcela(idCompra:string, parcela: Parcela){
-    const usuarioId = this.authService.getUsuarioLogado();
+    const usuarioId = this.getUsuarioId();
     return this.http.post<Parcela>(`${environment.apiUrl}/${usuarioId}/compras/${idCompra}/parcelas`, parcela);
   }
+
+  editParcela(idCompra: string, idParcela: string, parcela: Parcela){
+    const usuarioId = this.getUsuarioId();
+    return this.http.put<Parcela>(`${environment.apiUrl}/${usuarioId}/compras/${idCompra}/parcelas/${idParcela}`, parcela);
+  }
+
+  removeParcela(idCompra: string, idParcela: string){
+    const usuarioId = this.getUsuarioId();
+    return this.http.delete(`${environment.apiUrl}/${usuarioId}/compras/${idCompra}/parcelas/${idParcela}`);
+  }
+
 }

@@ -1,1 +1,26 @@
-<p>relatorio works!</p>
+<input name="mes" [(ngModel)]="mes" type="number" placeholder="mes">
+<input name="ano" [(ngModel)]="ano" type="number" placeholder="ano">
+<button (click)="getParcelasMes()">carregar</button>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Data Vencimento</th>
+        <th>Valor</th>
+        <th>Parcela</th>
+        <th>ID compra</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parcela of parcelas">
+        <td>{{parcela.dataVencimento | date: 'dd-MM-yyyy'}}</td>
+        <td>{{parcela.valor | currency: 'BRL'}}</td>
+        <td>{{parcela.parcela}}</td>
+        <td>{{parcela.idCompra}}</td>
+        <td>{{parcela.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
