@@ -1,73 +1,22 @@
-<input name="mes" [(ngModel)]="mes" type="number" placeholder="mes">
-<input name="ano" [(ngModel)]="ano" type="number" placeholder="ano">
-<button (click)="getParcelasMes()">carregar</button>
-
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Data Vencimento</th>
-        <th>Valor</th>
-        <th>Parcela</th>
-        <th>ID compra</th>
-        <th>ID</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let parcela of parcelas.slice(0,5) ">
-        <td>{{parcela.dataVencimento | date: 'dd-MM-yyyy'}}</td>
-        <td>{{parcela.valor | currency: 'BRL'}}</td>
-        <td>{{parcela.parcela}}</td>
-        <td>{{parcela.idCompra}}</td>
-        <td>{{parcela.id}}</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Total Fatura</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>{{totalParcelas}}</th>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
-<tr></tr>
-<input name="mes" [(ngModel)]="mes" type="number" placeholder="mes">
-<input name="ano" [(ngModel)]="ano" type="number" placeholder="ano">
-<input name="pessoa" [(ngModel)]="usuarioId" type="text">
-<button (click)="getParcelasByUsuario()">carregar</button>
-
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Data Vencimento</th>
-        <th>Valor</th>
-        <th>Parcela</th>
-        <th>ID compra</th>
-        <th>ID</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let parcela of parcelasPessoas">
-        <td>{{parcela.dataVencimento | date: 'dd-MM-yyyy'}}</td>
-        <td>{{parcela.valor | currency: 'BRL'}}</td>
-        <td>{{parcela.parcela}}</td>
-        <td>{{parcela.idCompra}}</td>
-        <td>{{parcela.id}}</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Total por pessoa</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>{{totalPessoa}}</th>
-      </tr>
-    </tfoot>
-  </table>
+<div class="envolver">
+  <div class="container d-flex">
+    <h5>Total da fatura</h5>
+    <span class="ms-2">{{totalParcelas}}</span>
+  </div>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Valor</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pessoas of resultados">
+          <th>{{pessoas.idDevedor}}</th>
+          <th>{{pessoas.total | currency:'BRL'}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

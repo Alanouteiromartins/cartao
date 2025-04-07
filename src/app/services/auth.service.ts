@@ -19,7 +19,7 @@ export class AuthService {
       map(usuarios => {
         const usuario = usuarios.find(user => user.email === email && user.senha === senha);
         if (usuario) {
-          localStorage.setItem('usuario', JSON.stringify(usuario));
+          sessionStorage.setItem('usuario', JSON.stringify(usuario));
           this.router.navigate(['pessoas']);
           return true;  // Login bem-sucedido
         }
@@ -28,12 +28,12 @@ export class AuthService {
     );
   }
   getUsuarioLogado(): Usuario | null {
-    const usuario = localStorage.getItem('usuario');
+    const usuario = sessionStorage.getItem('usuario');
     return usuario ? JSON.parse(usuario) : null;
   }
 
   deslogar(){
-    localStorage.removeItem('usuario');
+    sessionStorage.removeItem('usuario');
     this.router.navigate(['/login']);
   }
 }
