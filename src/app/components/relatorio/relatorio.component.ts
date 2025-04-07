@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Parcela } from '../../interfaces/parcela.interface';
 import { CommonModule } from '@angular/common';
 import { CompraService } from '../../services/compra.service';
+import { Pessoa } from '../../interfaces/pessoa.interface';
 
 @Component({
   selector: 'app-relatorio',
@@ -24,8 +25,8 @@ export class RelatorioComponent implements OnInit{
 
   //parcelas
   parcelas: Parcela[]= [];
-  parcelasPessoas: Parcela[] = [];
-  resultados: { idDevedor: string, total: number }[] = [];
+  parcelasPorPessoa:Parcela[] =[];
+  resultados: { devedor: Pessoa, total: number }[] = [];
 
   constructor(private parcelaService: ParcelaService, private compraService: CompraService){}
 
@@ -36,32 +37,45 @@ export class RelatorioComponent implements OnInit{
 
   getIds() {
     this.compraService.getCompras().subscribe((compras) => {
+      const devedoresMap = new Map<string, Pessoa>();
       const idsUnicos = new Set<string>();
-
+  
       compras.forEach((compra) => {
-        if (compra.idDevedor !== undefined && compra.idDevedor !== null) {
+        if (compra.devedor && compra.idDevedor) {
           idsUnicos.add(compra.idDevedor);
+          devedoresMap.set(compra.idDevedor, compra.devedor);
         }
       });
-
+  
       const ids = Array.from(idsUnicos);
-      const resultados: { idDevedor: string, total: number }[] = [];
-
+      const resultados: { devedor: Pessoa, total: number }[] = [];
+  
       let count = 0;
-      ids.forEach((id)=>{
-        this.parcelaService.getParcelasMesByPessoas(String(id), this.ano, this.mes).subscribe((parcelas)=>{
-          const total = parcelas.reduce((acc, parcela)=> acc + parcela.valor, 0);
-          resultados.push({ idDevedor: id, total });
-
-          count ++;
+      ids.forEach((id) => {
+        this.parcelaService.getParcelasMesByPessoas(String(id), this.ano, this.mes).subscribe((parcelas) => {
+          const total = parcelas.reduce((acc, parcela) => acc + parcela.valor, 0);
+          const devedor = devedoresMap.get(id);
+  
+          if (devedor) {
+            resultados.push({ devedor, total });
+          }
+  
+          count++;
           if (count === ids.length) {
             // Todos os devedores foram processados
             console.log('Valores por devedor:', resultados);
+            this.resultados = resultados;
           }
-          this.resultados = resultados;
-        })
-      })
+        });
+      });
     });
+  }
+  
+  abrirModal(pessoa: Pessoa){
+    if(pessoa && pessoa.id) this.parcelaService.getParcelasMesByPessoas(pessoa.id, this.ano, this.mes).subscribe((parcelas)=>{
+      this.parcelasPorPessoa = parcelas;
+    })
+
   }
 
 

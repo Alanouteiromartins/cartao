@@ -4,19 +4,49 @@
     <span class="ms-2">{{totalParcelas}}</span>
   </div>
   <div>
-    <table class="table table-hover">
+    <table class="table table-hover"  style="cursor: pointer;">
       <thead>
         <tr>
-          <td>ID</td>
-          <td>Valor</td>
+          <th>ID</th>
+          <th>Valor</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let pessoas of resultados">
-          <th>{{pessoas.idDevedor}}</th>
-          <th>{{pessoas.total | currency:'BRL'}}</th>
+        <tr data-bs-target="#modalComprasByPessoa" data-bs-toggle="modal" (click)="abrirModal(pessoas.devedor)" *ngFor="let pessoas of resultados">
+          <td>{{pessoas.devedor.nome}}</td>
+          <td>{{pessoas.total | currency:'BRL'}}</td>
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalComprasByPessoa" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Compras</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Data Vencimento</th>
+                  <th>Valor</th>
+                  <th>Parcela</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let parcela of parcelasPorPessoa">
+                  <td>{{parcela.dataVencimento | date: 'dd-MM-yyyy'}}</td>
+                  <td>{{parcela.valor |currency: 'BRL'}}</td>
+                  <td>{{parcela.parcela}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
   </div>
 </div>
