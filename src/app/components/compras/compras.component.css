@@ -1,0 +1,13 @@
+@media (max-width: 768px){
+    .container button{
+        font-size: 12px;
+    }
+
+    .modal button{
+        font-size: 12px;
+    }
+    .table{
+        font-size: 9px
+    }
+
+}

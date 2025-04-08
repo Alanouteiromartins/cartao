@@ -1,10 +1,10 @@
 <div class="envolver">
   <div class="container d-flex justify-content-between">
-    <div class="d-flex align-items-end">
-      <span style="font-size: 22px;"><Strong>Total da fatura</Strong></span>
-    <span style="font-size: 20px;" class="ms-4">{{totalParcelas | currency:'BRL'}}</span>
+    <div class="d-flex total-fatura-box">
+      <span><Strong>Total da fatura</Strong></span>
+    <span class="ms-4">{{totalParcelas | currency:'BRL'}}</span>
     </div>
-    <div class="d-flex">
+    <div class="d-flex justify-content-end filtro-data-box mt-2">
       <select (click)="ngOnInit()" [(ngModel)]="mesSelecionado" class="form-select me-1" >
         <option *ngFor="let mes of meses" [value]="mes.valor" >{{mes.nome}}</option>
       </select>
@@ -15,9 +15,9 @@
 
   </div>
   <div>
-    <table class="table table-hover"  style="cursor: pointer;">
+    <table class="mt-2 table table-hover"  style="cursor: pointer;">
       <thead>
-        <tr>
+        <tr class="table-dark">
           <th>Nome</th>
           <th>Valor</th>
         </tr>
