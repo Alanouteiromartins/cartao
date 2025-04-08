@@ -39,13 +39,13 @@
         {
           "id": "1743980064311",
           "nome": "Davi",
-          "telefone": "-",
+          "telefone": "(51)99012-3897",
           "email": "-"
         },
         {
           "id": "1743980071708",
           "nome": "Fábio",
-          "telefone": "-",
+          "telefone": "(51)99780-6176",
           "email": "-"
         }
       ],
@@ -1045,6 +1045,289 @@
               "dataVencimento": "2025-04-11T00:00:00.000Z",
               "parcela": 1,
               "idCompra": "1743981160465"
+            }
+          ]
+        },
+        {
+          "id": "1744069121452",
+          "descricao": "2 Pneus carro Ceat Eco Drive 175 65 R14",
+          "valor": 400,
+          "data": "2025-04-05",
+          "qtdParcelas": 10,
+          "idDevedor": "9999",
+          "devedor": {
+            "id": "9999",
+            "nome": "Tiffani",
+            "telefone": "(51)99370-3500",
+            "email": "tiffani.avila@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744069121468",
+              "valor": 40,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121470",
+              "valor": 40,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121472",
+              "valor": 40,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121474",
+              "valor": 40,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 6,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121476",
+              "valor": 40,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 7,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121479",
+              "valor": 40,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 8,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121481",
+              "valor": 40,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 9,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121483",
+              "valor": 40,
+              "dataVencimento": "2026-02-11T00:00:00.000Z",
+              "parcela": 10,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121485",
+              "valor": 40,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744069121452"
+            },
+            {
+              "id": "1744069121487",
+              "valor": 40,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744069121452"
+            }
+          ]
+        },
+        {
+          "id": "1744069178031",
+          "descricao": "2 Pneus carro Ceat Eco Drive 175 65 R14",
+          "valor": 427.46,
+          "data": "2025-04-05",
+          "qtdParcelas": 10,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744069178043",
+              "valor": 42.75,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178045",
+              "valor": 42.75,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178047",
+              "valor": 42.75,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178049",
+              "valor": 42.75,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 6,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178051",
+              "valor": 42.75,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 7,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178053",
+              "valor": 42.75,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 8,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178055",
+              "valor": 42.75,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 9,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178057",
+              "valor": 42.75,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178059",
+              "valor": 42.75,
+              "dataVencimento": "2026-02-11T00:00:00.000Z",
+              "parcela": 10,
+              "idCompra": "1744069178031"
+            },
+            {
+              "id": "1744069178061",
+              "valor": 42.75,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744069178031"
+            }
+          ]
+        },
+        {
+          "id": "1744069207962",
+          "descricao": "Calças Renner Tiffani",
+          "valor": 319.8,
+          "data": "2025-04-05",
+          "qtdParcelas": 3,
+          "idDevedor": "9999",
+          "devedor": {
+            "id": "9999",
+            "nome": "Tiffani",
+            "telefone": "(51)99370-3500",
+            "email": "tiffani.avila@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744069207972",
+              "valor": 106.6,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744069207962"
+            },
+            {
+              "id": "1744069207973",
+              "valor": 106.6,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744069207962"
+            },
+            {
+              "id": "1744069207975",
+              "valor": 106.6,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744069207962"
+            }
+          ]
+        },
+        {
+          "id": "1744069245896",
+          "descricao": "Capinha celular Tiffani",
+          "valor": 59.9,
+          "data": "2025-04-07",
+          "qtdParcelas": 2,
+          "idDevedor": "9999",
+          "devedor": {
+            "id": "9999",
+            "nome": "Tiffani",
+            "telefone": "(51)99370-3500",
+            "email": "tiffani.avila@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744069245905",
+              "valor": 29.95,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744069245896"
+            },
+            {
+              "id": "1744069245907",
+              "valor": 29.95,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744069245896"
+            }
+          ]
+        },
+        {
+          "id": "1744069274798",
+          "descricao": "Presente (Mana)",
+          "valor": 234.98,
+          "data": "2025-04-07",
+          "qtdParcelas": 4,
+          "idDevedor": "1743979850194",
+          "devedor": {
+            "id": "1743979850194",
+            "nome": "Rosenilda",
+            "telefone": "(51)99286-0987",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744069274808",
+              "valor": 58.74,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744069274798"
+            },
+            {
+              "id": "1744069274810",
+              "valor": 58.74,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744069274798"
+            },
+            {
+              "id": "1744069274812",
+              "valor": 58.74,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744069274798"
+            },
+            {
+              "id": "1744069274814",
+              "valor": 58.74,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744069274798"
             }
           ]
         }

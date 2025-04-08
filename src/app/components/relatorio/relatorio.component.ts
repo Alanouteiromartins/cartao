@@ -5,6 +5,10 @@ import { Parcela } from '../../interfaces/parcela.interface';
 import { CommonModule } from '@angular/common';
 import { CompraService } from '../../services/compra.service';
 import { Pessoa } from '../../interfaces/pessoa.interface';
+import { map, forkJoin } from 'rxjs';
+import html2pdf from 'html2pdf.js';
+
+
 
 @Component({
   selector: 'app-relatorio',
@@ -15,13 +19,31 @@ import { Pessoa } from '../../interfaces/pessoa.interface';
 })
 export class RelatorioComponent implements OnInit{
 
-  ano = 2025;
-  mes = 4;
   usuarioId = '';
+  pessoaSelecionada!: Pessoa;
+
+  meses: { nome: string, valor: number }[] = [
+    { nome: 'Janeiro', valor: 1 },
+    { nome: 'Fevereiro', valor: 2 },
+    { nome: 'Março', valor: 3 },
+    { nome: 'Abril', valor: 4 },
+    { nome: 'Maio', valor: 5 },
+    { nome: 'Junho', valor: 6 },
+    { nome: 'Julho', valor: 7 },
+    { nome: 'Agosto', valor: 8 },
+    { nome: 'Setembro', valor: 9 },
+    { nome: 'Outubro', valor: 10 },
+    { nome: 'Novembro', valor: 11 },
+    { nome: 'Dezembro', valor: 12 }
+  ];
+
+  mesSelecionado: number = new Date().getMonth() + 1;
+  anoSelecionado: number = new Date().getFullYear();
 
   //inputs
   totalParcelas: number = 0;
   totalPessoa: number = 0;
+  totalParcelasPessoa: number = 0;
 
   //parcelas
   parcelas: Parcela[]= [];
@@ -52,7 +74,7 @@ export class RelatorioComponent implements OnInit{
   
       let count = 0;
       ids.forEach((id) => {
-        this.parcelaService.getParcelasMesByPessoas(String(id), this.ano, this.mes).subscribe((parcelas) => {
+        this.parcelaService.getParcelasMesByPessoas(String(id), this.anoSelecionado, this.mesSelecionado).subscribe((parcelas) => {
           const total = parcelas.reduce((acc, parcela) => acc + parcela.valor, 0);
           const devedor = devedoresMap.get(id);
   
@@ -62,9 +84,7 @@ export class RelatorioComponent implements OnInit{
   
           count++;
           if (count === ids.length) {
-            // Todos os devedores foram processados
-            console.log('Valores por devedor:', resultados);
-            this.resultados = resultados;
+            this.resultados = resultados.sort((a,b)=> a.devedor.nome.localeCompare(b.devedor.nome));
           }
         });
       });
@@ -72,18 +92,49 @@ export class RelatorioComponent implements OnInit{
   }
   
   abrirModal(pessoa: Pessoa){
-    if(pessoa && pessoa.id) this.parcelaService.getParcelasMesByPessoas(pessoa.id, this.ano, this.mes).subscribe((parcelas)=>{
-      this.parcelasPorPessoa = parcelas;
-    })
-
+    this.pessoaSelecionada = pessoa;
+    if (pessoa && pessoa.id) {
+      this.parcelaService.getParcelasMesByPessoas(pessoa.id, this.anoSelecionado, this.mesSelecionado).subscribe((parcelas) => {
+        const observables = parcelas.map(parcela =>
+          this.compraService.getCompraById(parcela.idCompra).pipe(
+            map((compra) => ({
+              ...parcela,
+              descricaoCompra: compra.descricao
+            }))
+          )
+        );
+  
+        forkJoin(observables).subscribe((parcelasComDescricao) => {
+          this.parcelasPorPessoa = parcelasComDescricao;
+  
+          // calcula o total aqui
+          this.totalParcelasPessoa = parcelasComDescricao.reduce((total, p) => total + p.valor, 0);
+        });
+      });
+    }
   }
 
 
   getParcelasMes(){
-    this.parcelaService.getParcelasMes(this.ano, this.mes).subscribe((parcelas)=>{
+    this.parcelaService.getParcelasMes(this.anoSelecionado, this.mesSelecionado).subscribe((parcelas)=>{
       this.parcelas = parcelas;
       this.totalParcelas = parcelas.reduce((total, p) => total + p.valor, 0);
     })
   }
 
+  exportarModalParaPDF() {
+    const elemento = document.getElementById('conteudoModalPDF');
+    if (elemento) {
+      const opcoes = {
+        margin: 10,
+        filename: `compras-${this.pessoaSelecionada.nome}-${this.mesSelecionado}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().from(elemento).set(opcoes).save();
+    }
+  }
+
+  
 }

@@ -22,6 +22,11 @@ export class CompraService {
     return this.http.get<Compra[]>(`${environment.apiUrl}/${id}/compras`);
   }
 
+  getCompraById(id: string){
+    const idUser = this.getUsuarioId();
+    return this.http.get<Compra>(`${environment.apiUrl}/${idUser}/compras/${id}`);
+  }
+
   addCompra(compra: Compra){
     const id = this.getUsuarioId();
     return this.http.post<Compra>(`${environment.apiUrl}/${id}/compras`, compra);

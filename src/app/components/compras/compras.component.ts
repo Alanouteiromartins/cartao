@@ -52,7 +52,7 @@ export class ComprasComponent implements OnInit {
         }
       });
       this.compras = compras;
-      console.log(this.compras);
+      this.compras.sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime());
     })
   }
 

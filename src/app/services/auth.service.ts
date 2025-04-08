@@ -21,6 +21,7 @@ export class AuthService {
         if (usuario) {
           sessionStorage.setItem('usuario', JSON.stringify(usuario));
           this.router.navigate(['pessoas']);
+          console.log('chegou aqui');
           return true;  // Login bem-sucedido
         }
         return false;  // Login falhou

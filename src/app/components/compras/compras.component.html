@@ -1,6 +1,6 @@
 <div class="envolver">
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Lista de Compras</h2>
+        <h4 class="text-center mb-4">Últimas compras</h4>
         <div class="d-flex justify-content-end mb-3">
             <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">Adicionar</button>
         </div>
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody id="tabelaCompras">
-                <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras.slice(0,5)">
+                <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras.slice(0,10)">
                     <td>{{compra.descricao}}</td>
                     <td>{{compra.valor | currency:'BRL'}}</td>
                     <td>{{compra.data | date:'dd/MM/yyyy'}}</td>

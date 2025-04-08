@@ -4,4 +4,5 @@ export interface Parcela {
     parcela: number,
     idCompra: string,
     id?: string
+    descricaoCompra?: string;
 }
