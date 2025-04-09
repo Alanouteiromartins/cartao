@@ -126,14 +126,32 @@ export class RelatorioComponent implements OnInit{
     const elemento = document.getElementById('conteudoModalPDF');
     if (elemento) {
       const opcoes = {
-        margin: 10,
+        margin: [10, 10, 10, 10], // margem top, right, bottom, left
         filename: `compras-${this.pessoaSelecionada.nome}-${this.mesSelecionado}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        html2canvas: {
+          scale: 1.5, // não exagerado pra não cortar
+          useCORS: true,
+          allowTaint: true,
+        },
+        jsPDF: {
+          unit: 'mm',
+          format: 'a4',
+          orientation: 'portrait'
+        },
+        pagebreak: {
+          mode: ['avoid-all', 'css', 'legacy']
+        }
       };
+  
       html2pdf().from(elemento).set(opcoes).save();
     }
+  }
+  
+
+  aoAlterarMesOuAno() {
+    this.getParcelasMes();
+    this.getIds();        
   }
 
   
