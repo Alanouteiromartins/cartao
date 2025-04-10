@@ -36,6 +36,7 @@ export class ComprasComponent implements OnInit {
   data!: Date;
   qtdparcelas?: number;
   Devedor: Pessoa | null = null;
+  filtroBusca: string = '';
 
   ngOnInit(): void {
       this.getCompras();
@@ -191,5 +192,11 @@ export class ComprasComponent implements OnInit {
       this.alertaService.sucesso("Compra cadastrada com sucesso!");
       this.getCompras();
     }
+  }
+
+  get comprasFiltradas() {
+    return this.compras.filter(c =>
+      c.descricao.toLowerCase().includes(this.filtroBusca.toLowerCase())
+    );
   }
 }

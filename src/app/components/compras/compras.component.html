@@ -1,12 +1,18 @@
-<div class="envolver rounded shadow-sm bg-white">
+<div class="envolver p-3 p-md-4 rounded shadow-sm">
   <div class="container">
 
     <!-- Cabeçalho -->
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
-      <h5 class="m-0">Últimas Compras</h5>
+      <h5 class="mb-0">Últimas Compras</h5>
       <div class="d-flex flex-row flex-wrap justify-content-between gap-2">
-        <button class="btn btn-outline-secondary" disabled>🔍 Buscar</button>
-        <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">
+        <input
+          type="text"
+          class="form-control flex-grow-1 flex-sm-grow-0"
+          style="max-width: 100%;"
+          placeholder="🔍 Buscar compra"
+          [(ngModel)]="filtroBusca"
+    />
+        <button (click)="limparModal()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCompra">
           ➕ Nova Compra
         </button>
       </div>
@@ -25,7 +31,7 @@
           </tr>
         </thead>
         <tbody id="tabelaCompras">
-          <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras.slice(0,10)">
+          <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of comprasFiltradas.slice(0,10)">
             <td>{{compra.descricao}}</td>
             <td>{{compra.valor | currency:'BRL'}}</td>
             <td>{{compra.data | date:'dd/MM/yyyy'}}</td>
