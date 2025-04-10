@@ -1,13 +1,35 @@
-@media (max-width: 768px){
-    .container button{
-        font-size: 12px;
-    }
+.envolver {
+  background-color: #fff;
+}
 
-    .modal button{
-        font-size: 12px;
-    }
-    .table{
-        font-size: 10px
-    }
+/* Estilização suave de inputs no foco */
+input:focus, select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
+  border-color: #86b7fe;
+}
 
+/* Deixa os botões mais modernos */
+button {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Ajuste dos botões no mobile para não colarem */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  table th, table td {
+    font-size: 0.90rem;
+  }
 }

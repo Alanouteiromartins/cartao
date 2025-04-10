@@ -1,29 +1,52 @@
-a, span {
-    color: #fff;
+/* Texto e ícones da navbar */
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff !important;
+  transition: color 0.3s ease;
 }
 
-.container > a {
-    font-size: 1.5rem;
+/* Hover elegante */
+.navbar-nav .nav-link:hover {
+  color: #d1e7ff !important;
 }
 
-.navbar-nav > a {
-    gap: 5px;
-    font-size: 1.15rem;
-}
-
-.nav-link:hover{
-    color: rgb(185, 185, 185);
-}
-
+/* Active link */
 .navbar-nav .nav-link.active {
-    border-bottom: 3px solid #f8f9fa !important; /* Linha branca na parte inferior */
-    color: #f8f9fa !important;
+  border-bottom: 3px solid #fff;
+  color: #fff !important;
 }
 
-.navbar {
-    padding: 0;
+/* Altura e alinhamento */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
 }
 
-.navbar-nav a {
-    height: 80px;
+/* Botão sair */
+.navbar .btn-light {
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-light:hover {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
+/* Mobile responsivo */
+@media (max-width: 576px) {
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+
+  .navbar-brand span {
+    font-size: 1.2rem;
+  }
+
+  .navbar .btn-light {
+    width: 100%;
+  }
 }

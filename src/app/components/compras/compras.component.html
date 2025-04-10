@@ -1,74 +1,85 @@
-<div class="envolver">
-    <div class="container mt-1">
-        
-        <div class="d-flex justify-content-between align-items-end mb-3">
-            <h5>Últimas compras</h5>
-            <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">Adicionar</button>
-        </div>
+<div class="envolver rounded shadow-sm bg-white">
+  <div class="container">
 
-        <table class="table table-bordered table-hover text-center">
-            <thead class="table-dark">
-                <tr>
-                    <th>Descrição</th>
-                    <th>Valor (R$)</th>
-                    <th>Data</th>
-                    <th>Parcelas</th>
-                    <th>Devedor</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaCompras">
-                <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras.slice(0,10)">
-                    <td>{{compra.descricao}}</td>
-                    <td>{{compra.valor | currency:'BRL'}}</td>
-                    <td>{{compra.data | date:'dd/MM/yyyy'}}</td>
-                    <td>{{compra.qtdParcelas}}</td>
-                    <td>{{compra.devedor?.nome}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Cabeçalho -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
+      <h5 class="m-0">Últimas Compras</h5>
+      <div class="d-flex flex-row flex-wrap justify-content-between gap-2">
+        <button class="btn btn-outline-secondary" disabled>🔍 Buscar</button>
+        <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">
+          ➕ Nova Compra
+        </button>
+      </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Cadastrar Compra</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formCompra">
-                        <div class="mb-3">
-                            <label for="descricao" class="form-label">Descrição</label>
-                            <input [(ngModel)]="descricao" name="descricao" type="text" class="form-control" id="descricao" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="valor" class="form-label">Valor (R$)</label>
-                            <input [(ngModel)]="valor" name="valor" type="number" class="form-control" id="valor" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="data" class="form-label">Data</label>
-                            <input [(ngModel)]="data" name="data" type="date" class="form-control" id="data" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="parcelas" class="form-label">Quantidade de Parcelas</label>
-                            <input [(ngModel)]="qtdparcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="devedor" class="form-label">Devedor</label>
-                            <select [(ngModel)]="Devedor" name="devedor" class="form-select" id="devedor" required>
-                                <option [ngValue]="null" disabled selected>Selecione o devedor</option>
-                                <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">
-                                    {{pessoa.nome}}
-                                </option>
-                            </select>
-                        </div>
-                        <button id="btnSalvar"  type="submit" (click)="addCompra()" class="btn btn-primary w-100">Salvar</button>
-                        <button id="btnAtualizar" type="submit" (click)="editCompra()" class="btn btn-success w-25">Atualizar</button>
-                        <button id="btnExcluir" type="submit" (click)="deleteCompra()" class="btn btn-danger w-25 ms-1">Excluir</button>
-                    </form>
-                </div>
+    <!-- Tabela de Compras -->
+    <div class="table-responsive">
+      <table class="table table-hover align-middle text-center border">
+        <thead class="table-dark">
+          <tr>
+            <th>Descrição</th>
+            <th>Valor (R$)</th>
+            <th>Data</th>
+            <th>Parcelas</th>
+            <th>Devedor</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaCompras">
+          <tr style="cursor: pointer;" (click)="abrirModal(compra)" data-bs-toggle="modal" data-bs-target="#modalCompra" *ngFor="let compra of compras.slice(0,10)">
+            <td>{{compra.descricao}}</td>
+            <td>{{compra.valor | currency:'BRL'}}</td>
+            <td>{{compra.data | date:'dd/MM/yyyy'}}</td>
+            <td>{{compra.qtdParcelas}}</td>
+            <td>{{compra.devedor?.nome}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title fw-semibold" id="modalLabel">Cadastro de Compra</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formCompra">
+            <div class="form-floating mb-3">
+              <input [(ngModel)]="descricao" name="descricao" type="text" class="form-control" id="descricao" placeholder="Descrição" required>
+              <label for="descricao">Descrição</label>
             </div>
+            <div class="form-floating mb-3">
+              <input [(ngModel)]="valor" name="valor" type="number" class="form-control" id="valor" placeholder="Valor" required>
+              <label for="valor">Valor (R$)</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input [(ngModel)]="data" name="data" type="date" class="form-control" id="data" required>
+              <label for="data">Data</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input [(ngModel)]="qtdparcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" placeholder="Parcelas" required>
+              <label for="parcelas">Quantidade de Parcelas</label>
+            </div>
+            <div class="mb-3">
+              <label for="devedor" class="form-label">Devedor</label>
+              <select [(ngModel)]="Devedor" name="devedor" class="form-select" id="devedor" required>
+                <option [ngValue]="null" disabled selected>Selecione o devedor</option>
+                <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">
+                  {{pessoa.nome}}
+                </option>
+              </select>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-4">
+              <button id="btnSalvar" type="submit" class="btn btn-primary w-100 w-sm-auto" disabled>💾 Salvar</button>
+              <button id="btnAtualizar" type="button" class="btn btn-success w-100 w-sm-auto" disabled>✏ Atualizar</button>
+              <button id="btnExcluir" type="button" class="btn btn-danger w-100 w-sm-auto" disabled>🗑 Excluir</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </div>
