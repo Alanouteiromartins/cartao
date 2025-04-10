@@ -5,7 +5,13 @@
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
       <h5 class="mb-0">Lista de Pessoas</h5>
       <div class="d-flex flex-row flex-wrap justify-content-between gap-2">
-        <button class="btn btn-outline-secondary" disabled>🔍 Buscar</button>
+        <input
+          [(ngModel)]="busca"
+          type="text"
+          class="form-control form-control flex-grow-1 flex-sm-grow-0"
+          placeholder="Buscar pessoa..."
+          style="max-width: 250px;"
+        />
         <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPessoa">
           ➕ Nova Pessoa
         </button>
@@ -23,7 +29,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let pessoa of pessoas" style="cursor: pointer;" (click)="abrirModal(pessoa)" data-bs-toggle="modal" data-bs-target="#modalPessoa">
+          <tr *ngFor="let pessoa of pessoasFiltradas" style="cursor: pointer;" (click)="abrirModal(pessoa)" data-bs-toggle="modal" data-bs-target="#modalPessoa">
             <td>{{ pessoa.nome }}</td>
             <td>{{ pessoa.telefone }}</td>
             <td>{{ pessoa.email }}</td>

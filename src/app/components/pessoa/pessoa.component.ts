@@ -22,6 +22,7 @@ export class PessoaComponent implements OnInit{
   nome: string = '';
   telefone: string = '';
   email: string = '';
+  busca: string = '';
 
   constructor(private pessoaService: PessoaService, private alertaService: AlertaService, private usuarioService: UsuarioService){}
 
@@ -150,5 +151,15 @@ export class PessoaComponent implements OnInit{
       this.usuarios = usuarios;
     })
   }
+
+  get pessoasFiltradas() {
+    if (!this.busca.trim()) {
+      return this.pessoas;
+    }
+    return this.pessoas.filter(p =>
+      p.nome.toLowerCase().includes(this.busca.toLowerCase())
+    );
+  }
+  
   
 }

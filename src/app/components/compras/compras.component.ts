@@ -189,6 +189,7 @@ export class ComprasComponent implements OnInit {
         compra.parcelas = parcelas;
       })
       this.alertaService.sucesso("Compra cadastrada com sucesso!");
+      this.getCompras();
     }
   }
 }

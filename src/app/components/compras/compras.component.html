@@ -73,9 +73,9 @@
             </div>
 
             <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-4">
-              <button id="btnSalvar" type="submit" class="btn btn-primary w-100 w-sm-auto" disabled>💾 Salvar</button>
-              <button id="btnAtualizar" type="button" class="btn btn-success w-100 w-sm-auto" disabled>✏ Atualizar</button>
-              <button id="btnExcluir" type="button" class="btn btn-danger w-100 w-sm-auto" disabled>🗑 Excluir</button>
+              <button id="btnSalvar" type="submit" class="btn btn-primary w-100 w-sm-auto" (click)="addCompra()">💾 Salvar</button>
+              <button id="btnAtualizar" type="button" class="btn btn-success w-100 w-sm-auto" (click)="editCompra()">✏ Atualizar</button>
+              <button id="btnExcluir" type="button" class="btn btn-danger w-100 w-sm-auto" (click)="deleteCompra()">🗑 Excluir</button>
             </div>
           </form>
         </div>
