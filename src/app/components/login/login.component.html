@@ -1,25 +1,57 @@
 <div class="container py-5">
-    <div class="wrapper d-flex align-items-center justify-content-center h-100">
-        <div class="card login-form">
-            <div class="card-body">
-                <h5 class="card-title text-center">Login</h5>
-                <form>
-                    <div class="mb-3">
-                        <label for="InputEmail" class="form-label">E-mail</label>
-                        <input type="email" name="inputEmail" [(ngModel)]="inputEmail" class="form-control" id="InputEmail"
-                            aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="InputPassword" class="form-label">Senha</label>
-                        <input type="password" name="inputPassword" [(ngModel)]="inputPassword" class="form-control" id="InputPassword">
-                    </div>
-                    <div *ngIf="confirmar" class="alert alert-danger" role="alert">Usuário ou senha inválidos</div>
-                    <button type="submit" (click)="logar()" class="btn btn-primary w-100">Entrar</button>
-                    <div class="sign-up mt-4">
-                        Não tem uma conta? <a (click)="criarConta()" routerLink="registro">Criar conta</a>
-                    </div>
-                </form>
+    <div class="wrapper d-flex align-items-start justify-content-center min-vh-100">
+      <div class="card login-form border-0 shadow-lg">
+        <div class="card-body p-4">
+          <h4 class="card-title text-center mb-4 fw-semibold">🔐 Login</h4>
+          <form>
+            <div class="mb-3">
+              <label for="InputEmail" class="form-label">E-mail</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input
+                  type="email"
+                  name="inputEmail"
+                  [(ngModel)]="inputEmail"
+                  class="form-control"
+                  id="InputEmail"
+                  placeholder="Digite seu e-mail"
+                />
+              </div>
             </div>
+            <div class="mb-3">
+              <label for="InputPassword" class="form-label">Senha</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input
+                  type="password"
+                  name="inputPassword"
+                  [(ngModel)]="inputPassword"
+                  class="form-control"
+                  id="InputPassword"
+                  placeholder="Digite sua senha"
+                />
+              </div>
+            </div>
+  
+            <div *ngIf="confirmar" class="alert alert-danger py-2" role="alert">
+              Usuário ou senha inválidos
+            </div>
+  
+            <button type="submit" (click)="logar()" class="btn btn-primary w-100 mt-3">
+              Entrar
+            </button>
+  
+            <button type="button" class="btn btn-link w-100 text-secondary" disabled>
+              Esqueci minha senha
+            </button>
+  
+            <div class="sign-up mt-3 text-center">
+              Não tem uma conta?
+              <a (click)="criarConta()" routerLink="registro" class="fw-semibold">Criar conta</a>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  

@@ -1,11 +1,39 @@
 .login-form {
-    width: 350px;
-    padding: 2rem 1rem 1rem;
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  form {
-    padding: 1rem;
-  }
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-right: 0;
+}
+
+.input-group .form-control {
+  border-left: 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #86b7fe;
+}
+
+.btn-primary {
+  font-weight: 600;
+}
+
+.btn-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sign-up a {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
