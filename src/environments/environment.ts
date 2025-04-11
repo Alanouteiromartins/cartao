@@ -1,4 +1,7 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://apicartao-im9y.onrender.com/usuarios' 
+  apiUrl: 'http://localhost:3000/usuarios' 
 };
+
+
+//https://apicartao-im9y.onrender.com/usuarios

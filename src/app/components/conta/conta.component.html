@@ -1,0 +1,105 @@
+<div class="container my-5 conta-container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0 rounded-4 p-4">
+          <h2 class="mb-4 text-center">Minha Conta</h2>
+  
+          <div class="accordion" id="accordionConta">
+  
+            <!-- Dados Pessoais -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingDados">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDados" aria-expanded="true" aria-controls="collapseDados">
+                  Dados Pessoais
+                </button>
+              </h2>
+              <div id="collapseDados" class="accordion-collapse collapse show" aria-labelledby="headingDados" data-bs-parent="#accordionConta">
+                <div class="accordion-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="nome" class="form-label">Nome</label>
+                      <input type="text" class="form-control" id="nome" placeholder="Seu nome completo">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">E-mail</label>
+                      <input type="email" class="form-control" id="email" placeholder="seu@email.com">
+                    </div>
+                    <button type="button" class="btn btn-outline-primary w-100">Salvar Alterações</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Alterar Senha -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSenha">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSenha" aria-expanded="false" aria-controls="collapseSenha">
+                  Alterar Senha
+                </button>
+              </h2>
+              <div id="collapseSenha" class="accordion-collapse collapse" aria-labelledby="headingSenha" data-bs-parent="#accordionConta">
+                <div class="accordion-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="senhaAtual" class="form-label">Senha atual</label>
+                      <input type="password" class="form-control" id="senhaAtual" placeholder="Digite sua senha atual">
+                    </div>
+                    <div class="mb-3">
+                      <label for="novaSenha" class="form-label">Nova senha</label>
+                      <input type="password" class="form-control" id="novaSenha" placeholder="Digite sua nova senha">
+                    </div>
+                    <div class="mb-3">
+                      <label for="confirmarSenha" class="form-label">Confirmar nova senha</label>
+                      <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme sua nova senha">
+                    </div>
+                    <button type="button" class="btn btn-outline-primary w-100">Alterar Senha</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Preferências -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingPreferencias">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePreferencias" aria-expanded="false" aria-controls="collapsePreferencias">
+                  Preferências
+                </button>
+              </h2>
+              <div id="collapsePreferencias" class="accordion-collapse collapse" aria-labelledby="headingPreferencias" data-bs-parent="#accordionConta">
+                <div class="accordion-body">
+                  <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" id="notificacoes">
+                    <label class="form-check-label" for="notificacoes">Receber notificações por e-mail</label>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="temaEscuro">
+                    <label class="form-check-label" for="temaEscuro">Usar tema escuro</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Ações -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingAcoes">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAcoes" aria-expanded="false" aria-controls="collapseAcoes">
+                  Ações da Conta
+                </button>
+              </h2>
+              <div id="collapseAcoes" class="accordion-collapse collapse" aria-labelledby="headingAcoes" data-bs-parent="#accordionConta">
+                <div class="accordion-body">
+                  <div class="d-grid gap-2">
+                    <button (click)="sair()" class="btn btn-outline-secondary">Sair</button>
+                    <button class="btn btn-outline-danger">Excluir Conta</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,52 +1,61 @@
-/* Texto e ícones da navbar */
-.navbar-brand,
+/* Cor de fundo suave e neutra */
+.navbar {
+  background-color: #343a40;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Logo */
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Links do menu */
 .navbar-nav .nav-link {
-  color: #fff !important;
-  transition: color 0.3s ease;
-}
-
-/* Hover elegante */
-.navbar-nav .nav-link:hover {
-  color: #d1e7ff !important;
-}
-
-/* Active link */
-.navbar-nav .nav-link.active {
-  border-bottom: 3px solid #fff;
-  color: #fff !important;
-}
-
-/* Altura e alinhamento */
-.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
   font-size: 1rem;
-  font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
 }
 
-/* Botão sair */
-.navbar .btn-light {
+/* Hover suave */
+.navbar-nav .nav-link:hover {
+  background-color: #495057;
+  color: #ffffff !important;
+}
+
+/* Link ativo */
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff !important;
+}
+
+/* Botão "Minha Conta" */
+.navbar .btn-outline-light {
   font-weight: 500;
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
+  font-size: 0.95rem;
+  border-radius: 6px;
   transition: all 0.3s ease;
+  border: 1px solid #ffffff;
 }
 
-.navbar .btn-light:hover {
-  background-color: #e2e6ea;
-  color: #000;
+.navbar .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #343a40 !important;
 }
 
-/* Mobile responsivo */
+/* Responsivo */
 @media (max-width: 576px) {
   .navbar-nav {
     gap: 0.5rem;
+    padding-top: 1rem;
   }
 
-  .navbar-brand span {
-    font-size: 1.2rem;
-  }
-
-  .navbar .btn-light {
+  .navbar .btn-outline-light {
     width: 100%;
+    justify-content: center;
   }
 }

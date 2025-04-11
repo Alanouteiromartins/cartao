@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, Router } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navegacao',
@@ -10,13 +10,4 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
   styleUrl: './navegacao.component.css'
 })
 export class NavegacaoComponent {
-
-  router: Router = new Router();
-
-  sair(){
-    setTimeout(() =>{
-      this.router.navigate(['login']);
-      localStorage.removeItem('usuario');
-    }, 500);
-  }
 }
