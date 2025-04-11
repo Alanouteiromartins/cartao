@@ -8,13 +8,13 @@ export class AlertaService {
 
   constructor() {}
 
-  sucesso(mensagem: string, titulo: string = 'Sucesso!') {
-    Swal.fire({
+  sucesso(mensagem: string, titulo: string = 'Sucesso!'): Promise<void> {
+    return Swal.fire({
       title: titulo,
       text: mensagem,
       icon: 'success',
       confirmButtonText: 'OK'
-    });
+    }).then();
   }
 
   erro(mensagem: string, titulo: string = 'Erro!') {

@@ -14,4 +14,8 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(`${environment.apiUrl}`);
   }
 
+  addUsuario(usuario: Usuario){
+    return this.http.post<Usuario>(`${environment.apiUrl}`, usuario);
+  }
+
 }
