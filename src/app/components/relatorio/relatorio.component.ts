@@ -147,6 +147,53 @@ export class RelatorioComponent implements OnInit{
       html2pdf().from(elemento).set(opcoes).save();
     }
   }
+
+  exportarECompartilharPDF() {
+    const elemento = document.getElementById('conteudoModalPDF');
+    if (!elemento) return;
+  
+    const nomeArquivo = `compras-${this.pessoaSelecionada.nome}-${this.mesSelecionado}.pdf`;
+  
+    const opcoes = {
+      margin: [10, 10, 10, 10],
+      filename: nomeArquivo,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 1.5,
+        useCORS: true,
+        allowTaint: true,
+      },
+      jsPDF: {
+        unit: 'mm',
+        format: 'a4',
+        orientation: 'portrait',
+      },
+      pagebreak: {
+        mode: ['avoid-all', 'css', 'legacy']
+      }
+    };
+  
+    // Usa a lib html2pdf para gerar o PDF
+    html2pdf().from(elemento).set(opcoes).outputPdf('blob').then((blob: Blob) => {
+      const file = new File([blob], nomeArquivo, { type: 'application/pdf' });
+  
+      // Verifica se o navegador suporta Web Share com arquivos
+      if ((navigator as any).canShare && (navigator as any).canShare({ files: [file] })) {
+        (navigator as any).share({
+          title: 'Relatório de Compras',
+          text: 'Segue o relatório de compras em PDF.',
+          files: [file]
+        }).catch((err: any) => {
+          console.error('Erro ao compartilhar:', err);
+        });
+      } else {
+        // fallback: salva normalmente se não suportar compartilhamento
+        html2pdf().from(elemento).set(opcoes).save();
+        alert('Seu navegador não suporta compartilhamento direto. PDF foi baixado.');
+      }
+    });
+  }
+  
   
 
   aoAlterarMesOuAno() {

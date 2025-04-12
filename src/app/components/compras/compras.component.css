@@ -48,7 +48,7 @@ h2 {
   font-weight: 600;
   color: #343a40;
   font-size: 1.5rem;
-  width: 350px;
+  width: 400px;
   margin-bottom: auto;
   margin-top: auto;
 }
@@ -77,6 +77,7 @@ h2 {
 
   .titulo-compras {
     font-size: 1.75rem;
+    width: 100%;
   }
 
   .table tbody tr {
