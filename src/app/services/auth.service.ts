@@ -20,7 +20,7 @@ export class AuthService {
         const usuario = usuarios.find(user => user.email === email && user.senha === senha);
         if (usuario) {
           sessionStorage.setItem('usuario', JSON.stringify(usuario));
-          this.router.navigate(['pessoas']);
+          this.router.navigate(['relatorios']);
           console.log('chegou aqui');
           return true;  // Login bem-sucedido
         }
