@@ -1,15 +1,36 @@
-<div class="envolver p-4 rounded shadow-sm">
+<div class="envolver p-4 rounded shadow-sm bg-light">
+  <!-- Resumo Principal -->
+  <div class="row mb-4">
+    <div class="col-md-4 mb-2">
+      <div class="card shadow-sm text-center p-3">
+        <h6 class="text-muted">Total da Fatura</h6>
+        <h4 class="text-success">{{ totalParcelas | currency:'BRL' }}</h4>
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="card shadow-sm text-center p-3">
+        <h6 class="text-muted">Total de Pessoas</h6>
+        <h4 class="text-primary">{{ listaFiltrada.length }}</h4>
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="card shadow-sm text-center p-3">
+        <h6 class="text-muted">Período</h6>
+        <h4 class="text-dark">{{ mesSelecionado }}/{{ anoSelecionado }}</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filtros e Busca -->
   <div class="container-fluid mb-4">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3">
-      
-      <!-- Total da fatura + filtros (mobile) -->
       <div class="total-fatura-box d-flex flex-column">
-        <span class="fw-semibold fs-5 text-secondary">Total da fatura:</span>
-        <span class="fs-4 text-success">{{ totalParcelas | currency:'BRL'}}</span>
+        <span class="fw-semibold fs-5 text-secondary">Buscar Devedor:</span>
+        <input type="text" class="form-control" placeholder="Digite o nome..." [(ngModel)]="termoBusca" (ngModelChange)="atualizarFiltro()" />
 
         <!-- Filtros Mobile -->
         <div class="filtro-data-box mt-3 d-md-none d-flex gap-2">
-          <select [(ngModel)]="mesSelecionado" (change)="aoAlterarMesOuAno()" class="form-select me-1">
+          <select [(ngModel)]="mesSelecionado" (change)="aoAlterarMesOuAno()" class="form-select">
             <option *ngFor="let mes of meses" [value]="mes.valor">{{ mes.nome }}</option>
           </select>
           <select [(ngModel)]="anoSelecionado" (change)="aoAlterarMesOuAno()" class="form-select" name="ano">
@@ -34,16 +55,17 @@
     </div>
   </div>
 
+  <!-- Tabela de Pessoas -->
   <div class="table-responsive">
     <table class="table table-hover align-middle shadow-sm bg-white rounded">
       <thead class="table-dark">
         <tr>
-          <th>Nome</th>
-          <th>Valor</th>
+          <th><i class="bi bi-person-fill me-1"></i>Nome</th>
+          <th><i class="bi bi-cash-coin me-1"></i>Valor</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let pessoas of resultados"
+        <tr *ngFor="let pessoas of listaFiltrada"
             data-bs-target="#modalComprasByPessoa"
             data-bs-toggle="modal"
             (click)="abrirModal(pessoas.devedor)"
@@ -56,24 +78,25 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Detalhes da Pessoa -->
 <div class="modal fade" id="modalComprasByPessoa" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content shadow">
       <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="modalLabel">Detalhes das Compras</h5>
+        <h5 class="modal-title" id="modalLabel">Detalhes das Compras - {{ pessoaSelecionada?.nome }}</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
-          <button class="btn btn-danger  w-md-auto" (click)="exportarModalParaPDF()">Exportar PDF</button>
-          <button (click)="exportarECompartilharPDF()" class="btn btn-outline-secondary w-md-auto"><i class="bi bi-share me-1"></i> Enviar</button>
+          <button class="btn btn-danger" (click)="exportarModalParaPDF()">Exportar PDF</button>
+          <button (click)="exportarECompartilharPDF()" class="btn btn-outline-secondary"><i class="bi bi-share me-1"></i> Enviar</button>
         </div>
+
         <div id="conteudoModalPDF" style="font-family: Arial, sans-serif; font-size: 16px; padding: 10px;">
           <h3 style="text-align: center; margin-bottom: 20px;">
-            Relatório de Compras
+            Relatório de Compras - {{ pessoaSelecionada?.nome }}
           </h3>
-        
+
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
             <thead>
               <tr style="background-color: #343a40; color: white;">
@@ -83,23 +106,21 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let parcela of parcelasPorPessoa" style="border: 1px solid #dee2e6;">
+              <tr *ngFor="let parcela of parcelasPorPessoa" style="border: 1px solid #dee2e6; cursor: pointer;">
                 <td style="padding: 8px; border: 1px solid #dee2e6;">{{ parcela.descricaoCompra }}</td>
                 <td style="padding: 8px; border: 1px solid #dee2e6;">{{ parcela.valor | currency: 'BRL' }}</td>
                 <td style="padding: 8px; border: 1px solid #dee2e6;">{{ parcela.parcela }}</td>
               </tr>
             </tbody>
           </table>
-        
+
           <div style="text-align: right; font-size: 18px; margin-top: 10px;">
             <strong>Total: </strong>
-            <span style="font-weight: bold">
-              {{ totalParcelasPessoa | currency: 'BRL' }}
-            </span>
+            <span style="font-weight: bold">{{ totalParcelasPessoa | currency: 'BRL' }}</span>
           </div>
         </div>
-        
       </div>
     </div>
   </div>
 </div>
+

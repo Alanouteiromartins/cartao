@@ -3,6 +3,7 @@ export interface Parcela {
     dataVencimento: Date;
     parcela: number,
     idCompra: string,
+    idDevedor?: string;
     id?: string
     descricaoCompra?: string;
 }

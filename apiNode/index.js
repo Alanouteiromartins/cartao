@@ -197,6 +197,39 @@ app.get('/usuarios/:id/compras/:compraId/parcelas', (req, res) =>{
     res.json(compra.parcelas);
 })
 
+app.put('/usuarios/:id/compras/:compraId/parcelas/:parcelaId', (req, res) => {
+    const db = readDB();
+    const usuario = db.usuarios.find(u => u.id.toString() === req.params.id);
+
+    if (!usuario) {
+        return res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+
+    const compra = usuario.compras.find(c => c.id === req.params.compraId);
+    if (!compra) {
+        return res.status(404).json({ error: 'Compra não encontrada' });
+    }
+
+    const parcela = compra.parcelas.find(p => p.id === req.params.parcelaId);
+    if (!parcela) {
+        return res.status(404).json({ error: 'Parcela não encontrada' });
+    }
+
+    // Atualizar apenas os campos que forem enviados no corpo da requisição
+    const { valor, dataVencimento, parcela: numParcela, idCompra, idDevedor, descricaoCompra } = req.body;
+
+    if (valor !== undefined) parcela.valor = valor;
+    if (dataVencimento !== undefined) parcela.dataVencimento = new Date(dataVencimento);
+    if (numParcela !== undefined) parcela.parcela = numParcela;
+    if (idCompra !== undefined) parcela.idCompra = idCompra;
+    if (idDevedor !== undefined) parcela.idDevedor = idDevedor;
+    if (descricaoCompra !== undefined) parcela.descricaoCompra = descricaoCompra;
+
+    writeDB(db);
+
+    res.json({ parcela });
+});
+
 //adicionar parcela em uma compra
 app.post('/usuarios/:id/compras/:compraId/parcelas', (req, res) => {
   const db = readDB();

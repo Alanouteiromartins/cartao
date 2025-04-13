@@ -138,7 +138,8 @@
               "valor": 44.9,
               "dataVencimento": "2025-04-11T00:00:00.000Z",
               "parcela": 1,
-              "idCompra": "1743979755843"
+              "idCompra": "1743979755843",
+              "descricaoCompra": "Netflix"
             }
           ]
         },
@@ -297,7 +298,8 @@
               "valor": 6,
               "dataVencimento": "2025-04-11T00:00:00.000Z",
               "parcela": 1,
-              "idCompra": "1743980096062"
+              "idCompra": "1743980096062",
+              "descricaoCompra": "Spotify Fábio"
             }
           ]
         },
@@ -317,10 +319,11 @@
           "parcelas": [
             {
               "id": "1743980110990",
-              "valor": 6,
+              "valor": 6.05,
               "dataVencimento": "2025-04-11T00:00:00.000Z",
               "parcela": 1,
-              "idCompra": "1743980110955"
+              "idCompra": "1743980110955",
+              "descricaoCompra": "Spotify Davipppp"
             }
           ]
         },
@@ -366,7 +369,8 @@
               "valor": 50,
               "dataVencimento": "2025-04-11T00:00:00.000Z",
               "parcela": 1,
-              "idCompra": "1743980150244"
+              "idCompra": "1743980150244",
+              "descricaoCompra": "REK Parking "
             }
           ]
         },
@@ -1328,6 +1332,1510 @@
               "dataVencimento": "2025-06-11T00:00:00.000Z",
               "parcela": 2,
               "idCompra": "1744069274798"
+            }
+          ]
+        },
+        {
+          "id": "1744485859456",
+          "descricao": "spotify (17.1919%) (1/9)",
+          "valor": 6,
+          "data": "2025-04-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859557",
+              "valor": 6,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859456",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859458",
+          "descricao": "spotify (31.23%) (1/9)",
+          "valor": 10.9,
+          "data": "2025-04-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859571",
+              "valor": 10.9,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859458",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859460",
+          "descricao": "spotify (17.1919%) (1/9)",
+          "valor": 6,
+          "data": "2025-04-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859577",
+              "valor": 6,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859460",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859462",
+          "descricao": "spotify (17.1919%) (1/9)",
+          "valor": 6,
+          "data": "2025-04-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859565",
+              "valor": 6,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859462",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859464",
+          "descricao": "spotify (17.1919%) (1/9)",
+          "valor": 6,
+          "data": "2025-04-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859583",
+              "valor": 6,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859464",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859465",
+          "descricao": "spotify (17.1919%) (2/9)",
+          "valor": 6,
+          "data": "2025-05-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859590",
+              "valor": 6,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859465",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859467",
+          "descricao": "spotify (17.1919%) (2/9)",
+          "valor": 6,
+          "data": "2025-05-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859595",
+              "valor": 6,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859467",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859469",
+          "descricao": "spotify (31.23%) (2/9)",
+          "valor": 10.9,
+          "data": "2025-05-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859600",
+              "valor": 10.9,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859469",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859471",
+          "descricao": "spotify (17.1919%) (2/9)",
+          "valor": 6,
+          "data": "2025-05-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859606",
+              "valor": 6,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859471",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859473",
+          "descricao": "spotify (17.1919%) (2/9)",
+          "valor": 6,
+          "data": "2025-05-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859612",
+              "valor": 6,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859473",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859475",
+          "descricao": "spotify (17.1919%) (3/9)",
+          "valor": 6,
+          "data": "2025-06-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859616",
+              "valor": 6,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859475",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859477",
+          "descricao": "spotify (31.23%) (3/9)",
+          "valor": 10.9,
+          "data": "2025-06-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859622",
+              "valor": 10.9,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859477",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859479",
+          "descricao": "spotify (17.1919%) (3/9)",
+          "valor": 6,
+          "data": "2025-06-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859619",
+              "valor": 6,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859479",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859480",
+          "descricao": "spotify (17.1919%) (3/9)",
+          "valor": 6,
+          "data": "2025-06-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859628",
+              "valor": 6,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859480",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859482",
+          "descricao": "spotify (17.1919%) (3/9)",
+          "valor": 6,
+          "data": "2025-06-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859634",
+              "valor": 6,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859482",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859484",
+          "descricao": "spotify (17.1919%) (4/9)",
+          "valor": 6,
+          "data": "2025-07-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859643",
+              "valor": 6,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859484",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859486",
+          "descricao": "spotify (17.1919%) (4/9)",
+          "valor": 6,
+          "data": "2025-07-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859651",
+              "valor": 6,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859486",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859488",
+          "descricao": "spotify (31.23%) (4/9)",
+          "valor": 10.9,
+          "data": "2025-07-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859655",
+              "valor": 10.9,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859488",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859490",
+          "descricao": "spotify (17.1919%) (4/9)",
+          "valor": 6,
+          "data": "2025-07-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859659",
+              "valor": 6,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859490",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859492",
+          "descricao": "spotify (17.1919%) (4/9)",
+          "valor": 6,
+          "data": "2025-07-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859662",
+              "valor": 6,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859492",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859494",
+          "descricao": "spotify (17.1919%) (5/9)",
+          "valor": 6,
+          "data": "2025-08-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859665",
+              "valor": 6,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859494",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859496",
+          "descricao": "spotify (17.1919%) (5/9)",
+          "valor": 6,
+          "data": "2025-08-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859668",
+              "valor": 6,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859496",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859497",
+          "descricao": "spotify (31.23%) (5/9)",
+          "valor": 10.9,
+          "data": "2025-08-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859671",
+              "valor": 10.9,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859497",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859500",
+          "descricao": "spotify (17.1919%) (5/9)",
+          "valor": 6,
+          "data": "2025-08-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859674",
+              "valor": 6,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859500",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859502",
+          "descricao": "spotify (17.1919%) (6/9)",
+          "valor": 6,
+          "data": "2025-09-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859680",
+              "valor": 6,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859502",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859504",
+          "descricao": "spotify (17.1919%) (6/9)",
+          "valor": 6,
+          "data": "2025-09-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859683",
+              "valor": 6,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859504",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859506",
+          "descricao": "spotify (31.23%) (6/9)",
+          "valor": 10.9,
+          "data": "2025-09-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859686",
+              "valor": 10.9,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859506",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859508",
+          "descricao": "spotify (17.1919%) (6/9)",
+          "valor": 6,
+          "data": "2025-09-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859689",
+              "valor": 6,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859508",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859509",
+          "descricao": "spotify (17.1919%) (5/9)",
+          "valor": 6,
+          "data": "2025-08-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859677",
+              "valor": 6,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859509",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859511",
+          "descricao": "spotify (17.1919%) (6/9)",
+          "valor": 6,
+          "data": "2025-09-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859692",
+              "valor": 6,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859511",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859514",
+          "descricao": "spotify (17.1919%) (7/9)",
+          "valor": 6,
+          "data": "2025-10-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859695",
+              "valor": 6,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859514",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859515",
+          "descricao": "spotify (17.1919%) (7/9)",
+          "valor": 6,
+          "data": "2025-10-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859698",
+              "valor": 6,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859515",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859517",
+          "descricao": "spotify (31.23%) (7/9)",
+          "valor": 10.9,
+          "data": "2025-10-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859701",
+              "valor": 10.9,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859517",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859520",
+          "descricao": "spotify (17.1919%) (7/9)",
+          "valor": 6,
+          "data": "2025-10-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859704",
+              "valor": 6,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859520",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859521",
+          "descricao": "spotify (17.1919%) (7/9)",
+          "valor": 6,
+          "data": "2025-10-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859707",
+              "valor": 6,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859521",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859523",
+          "descricao": "spotify (17.1919%) (8/9)",
+          "valor": 6,
+          "data": "2025-11-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "e68f",
+          "devedor": {
+            "id": "e68f",
+            "nome": "Valdemar",
+            "telefone": "(51)99366-2284",
+            "email": "valdo.65@hotmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859710",
+              "valor": 6,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859523",
+              "idDevedor": "e68f"
+            }
+          ]
+        },
+        {
+          "id": "1744485859525",
+          "descricao": "spotify (17.1919%) (8/9)",
+          "valor": 6,
+          "data": "2025-11-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859713",
+              "valor": 6,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859525",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859527",
+          "descricao": "spotify (31.23%) (8/9)",
+          "valor": 10.9,
+          "data": "2025-11-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859716",
+              "valor": 10.9,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859527",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859531",
+          "descricao": "spotify (17.1919%) (8/9)",
+          "valor": 6,
+          "data": "2025-11-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859720",
+              "valor": 6,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859531",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859534",
+          "descricao": "spotify (17.1919%) (8/9)",
+          "valor": 6,
+          "data": "2025-11-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859724",
+              "valor": 6,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859534",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744485859539",
+          "descricao": "spotify (17.1919%) (9/9)",
+          "valor": 6,
+          "data": "2025-12-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859732",
+              "valor": 6,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859539",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744485859541",
+          "descricao": "spotify (31.23%) (9/9)",
+          "valor": 10.9,
+          "data": "2025-12-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859734",
+              "valor": 10.9,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859541",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744485859544",
+          "descricao": "spotify (17.1919%) (9/9)",
+          "valor": 6,
+          "data": "2025-12-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980064311",
+          "devedor": {
+            "id": "1743980064311",
+            "nome": "Davi",
+            "telefone": "(51)99012-3897",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859738",
+              "valor": 6,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859544",
+              "idDevedor": "1743980064311"
+            }
+          ]
+        },
+        {
+          "id": "1744485859546",
+          "descricao": "spotify (17.1919%) (9/9)",
+          "valor": 6,
+          "data": "2025-12-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "1743980071708",
+          "devedor": {
+            "id": "1743980071708",
+            "nome": "Fábio",
+            "telefone": "(51)99780-6176",
+            "email": "-"
+          },
+          "parcelas": [
+            {
+              "id": "1744485859740",
+              "valor": 6,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744485859546",
+              "idDevedor": "1743980071708"
+            }
+          ]
+        },
+        {
+          "id": "1744486026266",
+          "descricao": "Anel (50%)",
+          "valor": 50,
+          "data": "2025-04-12",
+          "qtdParcelas": 2,
+          "idDevedor": "9999",
+          "devedor": {
+            "id": "9999",
+            "nome": "Tiffani",
+            "telefone": "(51)99370-3500",
+            "email": "tiffani.avila@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744486026275",
+              "valor": 25,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744486026266",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486026278",
+              "valor": 25,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744486026266",
+              "idDevedor": "9999"
+            }
+          ]
+        },
+        {
+          "id": "1744486026271",
+          "descricao": "Anel (50%)",
+          "valor": 50,
+          "data": "2025-04-12",
+          "qtdParcelas": 2,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744486026283",
+              "valor": 25,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744486026271",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486026285",
+              "valor": 25,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744486026271",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744486084326",
+          "descricao": "anel (80%)",
+          "valor": 160,
+          "data": "2025-04-12",
+          "qtdParcelas": 4,
+          "idDevedor": "9999",
+          "devedor": {
+            "id": "9999",
+            "nome": "Tiffani",
+            "telefone": "(51)99370-3500",
+            "email": "tiffani.avila@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744486084334",
+              "valor": 40,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744486084326",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486084336",
+              "valor": 40,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744486084326",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486084339",
+              "valor": 40,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744486084326",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486084341",
+              "valor": 40,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744486084326",
+              "idDevedor": "9999"
+            }
+          ]
+        },
+        {
+          "id": "1744486084330",
+          "descricao": "anel (20%)",
+          "valor": 40,
+          "data": "2025-04-12",
+          "qtdParcelas": 4,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744486084348",
+              "valor": 10,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744486084330",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486084350",
+              "valor": 10,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744486084330",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486084353",
+              "valor": 10,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744486084330",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486084355",
+              "valor": 10,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744486084330",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744486160199",
+          "descricao": "Camisa branca",
+          "valor": 300,
+          "data": "2025-04-12",
+          "qtdParcelas": 10,
+          "idDevedor": "9999",
+          "devedor": {
+            "id": "9999",
+            "nome": "Tiffani",
+            "telefone": "(51)99370-3500",
+            "email": "tiffani.avila@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744486160207",
+              "valor": 30,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160210",
+              "valor": 30,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160212",
+              "valor": 30,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160214",
+              "valor": 30,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160216",
+              "valor": 30,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160219",
+              "valor": 30,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 6,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160222",
+              "valor": 30,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 7,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160224",
+              "valor": 30,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 8,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160227",
+              "valor": 30,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 9,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            },
+            {
+              "id": "1744486160231",
+              "valor": 30,
+              "dataVencimento": "2026-02-11T00:00:00.000Z",
+              "parcela": 10,
+              "idCompra": "1744486160199",
+              "idDevedor": "9999"
+            }
+          ]
+        },
+        {
+          "id": "1744486160202",
+          "descricao": "Camisa branca",
+          "valor": 200,
+          "data": "2025-04-12",
+          "qtdParcelas": 10,
+          "idDevedor": "0436",
+          "devedor": {
+            "id": "0436",
+            "nome": "Alan",
+            "telefone": "(51)99346-1726",
+            "email": "alanoutmartins@gmail.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744486160239",
+              "valor": 20,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160243",
+              "valor": 20,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 2,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160247",
+              "valor": 20,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 3,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160249",
+              "valor": 20,
+              "dataVencimento": "2025-08-11T00:00:00.000Z",
+              "parcela": 4,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160252",
+              "valor": 20,
+              "dataVencimento": "2025-09-11T00:00:00.000Z",
+              "parcela": 5,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160255",
+              "valor": 20,
+              "dataVencimento": "2025-10-11T00:00:00.000Z",
+              "parcela": 6,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160257",
+              "valor": 20,
+              "dataVencimento": "2025-11-11T00:00:00.000Z",
+              "parcela": 7,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160260",
+              "valor": 20,
+              "dataVencimento": "2025-12-11T00:00:00.000Z",
+              "parcela": 8,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160262",
+              "valor": 20,
+              "dataVencimento": "2026-01-11T00:00:00.000Z",
+              "parcela": 9,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            },
+            {
+              "id": "1744486160265",
+              "valor": 20,
+              "dataVencimento": "2026-02-11T00:00:00.000Z",
+              "parcela": 10,
+              "idCompra": "1744486160202",
+              "idDevedor": "0436"
+            }
+          ]
+        },
+        {
+          "id": "1744491787562",
+          "descricao": "rek parking",
+          "valor": 50,
+          "data": "2025-04-12",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744491787572",
+              "valor": 50,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744491787562",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744491878795",
+          "descricao": "spotify",
+          "valor": 6,
+          "data": "2025-04-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744491878805",
+              "valor": 6,
+              "dataVencimento": "2025-05-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744491878795",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744491878798",
+          "descricao": "spotify",
+          "valor": 6,
+          "data": "2025-05-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744491878813",
+              "valor": 6,
+              "dataVencimento": "2025-06-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744491878798",
+              "idDevedor": "9fbc"
+            }
+          ]
+        },
+        {
+          "id": "1744491878801",
+          "descricao": "spotify",
+          "valor": 6,
+          "data": "2025-06-10T00:00:00.000Z",
+          "qtdParcelas": 1,
+          "idDevedor": "9fbc",
+          "devedor": {
+            "id": "9fbc",
+            "nome": "Alcione",
+            "telefone": "(51)99410-5356",
+            "email": "avila_sl@outlook.com"
+          },
+          "parcelas": [
+            {
+              "id": "1744491878819",
+              "valor": 6,
+              "dataVencimento": "2025-07-11T00:00:00.000Z",
+              "parcela": 1,
+              "idCompra": "1744491878801",
+              "idDevedor": "9fbc"
             }
           ]
         }

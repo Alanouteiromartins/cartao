@@ -10,4 +10,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navegacao.component.css'
 })
 export class NavegacaoComponent {
+
+  fecharMenu(): void {
+    // Encontra o elemento de toggler e o colapsa se estiver expandido
+    const navbarToggler = document.querySelector('.navbar-toggler') as HTMLElement;
+    const navbarCollapse = document.querySelector('.navbar-collapse') as HTMLElement;
+    
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      navbarToggler?.click();
+    }
+  }
 }
