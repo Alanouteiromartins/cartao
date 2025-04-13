@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
-    apiUrl: '/api' 
+    production: true,
+    apiUrl: 'https://apicartao-im9y.onrender.com/usuarios' 
   };
   

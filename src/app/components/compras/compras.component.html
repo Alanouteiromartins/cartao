@@ -3,7 +3,18 @@
   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end gap-3 mb-4">
     <h1 class="titulo-compras p-1">💳 Últimas Compras</h1>
     <div class="d-flex flex-column flex-sm-row gap-2 w-100 w-md-auto">
-      <input type="text" class="form-control" placeholder="🔍 Buscar compra" [(ngModel)]="filtroBusca" />
+      <div class="input-group">
+        <select class="form-select flex-shrink-1" style="max-width: 130px; font-size: smaller;" [(ngModel)]="tipoBusca" name="tipoBusca">
+          <option value="descricao">🔍 Descrição</option>
+          <option value="devedor">👤 Devedor</option>
+          <option value="todos">🔄 Todos</option>
+        </select>
+        <input type="text" class="form-control" 
+               [placeholder]="tipoBusca === 'descricao' ? 'Descrição' : 
+                           tipoBusca === 'devedor' ? 'Nome' : 
+                           'Buscar compra'"
+               [(ngModel)]="filtroBusca" />
+      </div>
       <button (click)="limparModal()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompra">
         ➕ Nova Compra
       </button>
@@ -36,46 +47,136 @@
 
   <!-- Modal -->
   <div class="modal fade" id="modalCompra" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-4 shadow">
-        <div class="modal-header bg-dark text-white rounded-top-4">
-          <h5 class="modal-title fw-semibold" id="modalLabel">Cadastro de Compra</h5>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 shadow-lg">
+        <div class="modal-header bg-primary text-white rounded-top-4">
+          <h5 class="modal-title fw-bold" id="modalLabel">🛒 Cadastro de Compra</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
+
         <div class="modal-body p-4">
           <form id="formCompra">
-            <div class="form-floating mb-3">
-              <input [(ngModel)]="descricao" name="descricao" type="text" class="form-control" id="descricao" placeholder="Descrição" required>
-              <label for="descricao">Descrição</label>
+            <!-- DADOS PRINCIPAIS -->
+            <div class="border-bottom pb-3 mb-4">
+              <h6 class="text-secondary mb-3">Dados da Compra</h6>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input [(ngModel)]="descricao" name="descricao" type="text" class="form-control" id="descricao" placeholder="Descrição" required>
+                    <label for="descricao">Descrição</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input [(ngModel)]="valor" name="valor" type="number" class="form-control" id="valor" placeholder="Valor" required>
+                    <label for="valor">Valor (R$)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input [(ngModel)]="data" name="data" type="date" class="form-control" id="data" required>
+                    <label for="data">Data</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input [(ngModel)]="qtdparcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" placeholder="Parcelas" required>
+                    <label for="parcelas">Parcelas</label>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="form-floating mb-3">
-              <input [(ngModel)]="valor" name="valor" type="number" class="form-control" id="valor" placeholder="Valor" required>
-              <label for="valor">Valor (R$)</label>
+            <!-- TIPO DE VALOR -->
+            <div class="border-bottom pb-3 mb-4">
+              <h6 class="text-secondary mb-3">Tipo de Valor</h6>
+              <div class="btn-group d-flex" role="group">
+                <input type="radio" class="btn-check" name="tipoValor" id="valorTotal" [(ngModel)]="isValorTotal" [value]="true" checked>
+                <label class="btn btn-outline-primary w-100" for="valorTotal">💰 Valor total</label>
+
+                <input type="radio" class="btn-check" name="tipoValor" id="valorParcela" [(ngModel)]="isValorTotal" [value]="false">
+                <label class="btn btn-outline-primary w-100" for="valorParcela">📦 Valor da parcela</label>
+              </div>
             </div>
 
-            <div class="form-floating mb-3">
-              <input [(ngModel)]="data" name="data" type="date" class="form-control" id="data" required>
-              <label for="data">Data</label>
+            <!-- COMPRA RECORRENTE -->
+            <div class="border-bottom pb-3 mb-4">
+              <div class="form-check form-switch mb-2">
+                <input class="form-check-input" type="checkbox" id="checkRecorrente" [(ngModel)]="isRecorrente" name="isRecorrente">
+                <label class="form-check-label" for="checkRecorrente">Compra Recorrente</label>
+              </div>
+
+              <div *ngIf="isRecorrente" class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input [(ngModel)]="recorrenciaMeses" name="recorrenciaMeses" type="number" class="form-control" id="recorrenciaMeses" min="1" max="12" placeholder="Recorrência">
+                    <label for="recorrenciaMeses">Repetir a cada (meses)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input [(ngModel)]="dataFinal" name="dataFinal" type="date" class="form-control" id="dataFinal" placeholder="Data Final">
+                    <label for="dataFinal">Data final</label>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="form-floating mb-3">
-              <input [(ngModel)]="qtdparcelas" name="parcelas" type="number" class="form-control" id="parcelas" min="1" placeholder="Parcelas" required>
-              <label for="parcelas">Parcelas</label>
+            <!-- DIVISÃO -->
+            <div class="mb-4">
+              <h6 class="text-secondary mb-3">Divisão da Compra</h6>
+              <div class="btn-group d-flex mb-3" role="group">
+                <input type="radio" class="btn-check" name="tipoDivisao" id="unicoDevedor" [(ngModel)]="isMultiplosDevedores" [value]="false" checked (change)="atualizarOpcoesDivisao()">
+                <label class="btn btn-outline-success w-100" for="unicoDevedor">👤 Único devedor</label>
+
+                <input type="radio" class="btn-check" name="tipoDivisao" id="multiplosDevedores" [(ngModel)]="isMultiplosDevedores" [value]="true" (change)="atualizarOpcoesDivisao()">
+                <label class="btn btn-outline-success w-100" for="multiplosDevedores">👥 Múltiplos devedores</label>
+              </div>
+
+              <!-- Seletor único -->
+              <div *ngIf="!isMultiplosDevedores">
+                <select [(ngModel)]="Devedor" name="devedor" class="form-select" id="devedor" required>
+                  <option [ngValue]="null" disabled selected>Selecione o devedor</option>
+                  <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">{{pessoa.nome}}</option>
+                </select>
+              </div>
+
+              <!-- Vários devedores -->
+              <div *ngIf="isMultiplosDevedores">
+                <div class="row row-cols-1 row-cols-md-2 g-3">
+                  <div *ngFor="let pessoa of pessoas; let i = index">
+                    <div class="border rounded-3 p-3 h-100 bg-light">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" [id]="'devedor-' + i"
+                              [(ngModel)]="pessoaSelecionada[i]" name="pessoaSelecionada{{i}}" (change)="atualizarValoresDivisao()">
+                        <label class="form-check-label fw-semibold" [for]="'devedor-' + i">{{pessoa.nome}}</label>
+                      </div>
+                      <div *ngIf="pessoaSelecionada[i]" class="mt-2">
+                        <label class="form-label">Proporção (%)</label>
+                        <input type="number" class="form-control" [(ngModel)]="pessoaProporcao[i]" 
+                              name="pessoaProporcao{{i}}" min="1" max="100" 
+                              (change)="atualizarValoresDivisao()">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="alert alert-warning mt-3" *ngIf="totalProporcao !== 100 && isMultiplosDevedores">
+                  Total da proporção: {{totalProporcao}}% (deve ser 100%)
+                </div>
+              </div>
             </div>
 
-            <div class="mb-3">
-              <label for="devedor" class="form-label">Devedor</label>
-              <select [(ngModel)]="Devedor" name="devedor" class="form-select" id="devedor" required>
-                <option [ngValue]="null" disabled selected>Selecione o devedor</option>
-                <option *ngFor="let pessoa of pessoas" [ngValue]="pessoa">{{pessoa.nome}}</option>
-              </select>
-            </div>
-
+            <!-- BOTÕES -->
             <div class="d-grid gap-2 mt-4">
-              <button id="btnSalvar" type="submit" class="btn btn-primary" (click)="addCompra()">💾 Salvar</button>
-              <button id="btnAtualizar" type="button" class="btn btn-success" (click)="editCompra()">✏ Atualizar</button>
-              <button id="btnExcluir" type="button" class="btn btn-danger" (click)="deleteCompra()">🗑 Excluir</button>
+              <button id="btnSalvar" type="submit" class="btn btn-primary btn-lg" (click)="addCompra()">
+                💾 Salvar
+              </button>
+              <button id="btnAtualizar" type="button" class="btn btn-success btn-lg" (click)="editCompra()">
+                ✏ Atualizar
+              </button>
+              <button id="btnExcluir" type="button" class="btn btn-danger btn-lg" (click)="deleteCompra()">
+                🗑 Excluir
+              </button>
             </div>
           </form>
         </div>
